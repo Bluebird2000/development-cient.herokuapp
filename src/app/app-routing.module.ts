@@ -1,8 +1,9 @@
+import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard-layout.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MainComponent }   from './main/main.component';
+import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { ContactComponent } from './contact/contact.component';
@@ -16,35 +17,36 @@ export const AppRoutes: Routes = [{
    path: '',
    redirectTo: 'home',
    pathMatch: 'full',
-   },{
+   },
+   {
       path: '',
       component: MainComponent,
       children: [
          {
             path: 'home',
             component: HomeComponent
-         },{
+         }, {
             path: '',
             loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
-         },{
+         }, {
             path: 'pricing',
             component: PricingComponent
-         },{
+         }, {
             path: 'contact',
             component: ContactComponent
-         },{
-            path:'features',
-            component:FeaturesComponent
-         },{
-            path:'about',
-            component:AboutComponent
-         },{
-            path:'search',
-            component:SearchComponent
-         },{
-            path:'support',
-            component:SupportComponent
-         },{
+         }, {
+            path: 'features',
+            component: FeaturesComponent
+         }, {
+            path: 'about',
+            component: AboutComponent
+         }, {
+            path: 'search',
+            component: SearchComponent
+         }, {
+            path: 'support',
+            component: SupportComponent
+         }, {
             path: '',
             loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule)
          }, {
@@ -52,18 +54,34 @@ export const AppRoutes: Routes = [{
             loadChildren: () => import('./testimonial/testimonial.module').then(m => m.TestimonialModule)
          }, {
             path: 'sidebar-widgets',
-            component:sidebarWidgetsComponent
-         },{
+            component: sidebarWidgetsComponent
+         }, {
             path: '',
             loadChildren: () => import('./session/session.module').then(m => m.SessionModule)
-         },{
+         }, {
             path: '',
             loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)
-         },{ 
-				path: 'about/:keyword',component: AboutComponent 
-			}
+         }, {
+            path: 'about/:keyword',
+            component: AboutComponent
+      	},
       ]
-}];
+   },
+   {
+      path: '',
+      component: DashboardLayoutComponent,
+      children: [
+         {
+            path: '',
+            loadChildren: './dashboard/dashboard-layout/dashboard-layout.module#DashboardLayoutModule'
+         }
+      ]
+   },
+   {
+      path: '**',
+      redirectTo: 'home'
+    }
+];
 
 @NgModule({
   imports: [
