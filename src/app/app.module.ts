@@ -33,6 +33,7 @@ import { SupportComponent } from './support/support.component';
 import { Footer2Component } from './footer2/footer2.component';
 import { sidebarWidgetsComponent } from './sidebarWidgets/sidebarWidgets.component';
 import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard-layout.component';
+import { ComponentsModule } from './dashboard/dashboard-layout/components/components.module';
 
 @NgModule({
    declarations: [
@@ -59,6 +60,7 @@ import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard
       ReactiveFormsModule,
       HttpClientModule,
       AppRoutingModule,
+      ComponentsModule,
       WidgetsModule,
       MenuToggleModule,
       DirectivesModule,
