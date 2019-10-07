@@ -2,7 +2,7 @@
 <nav id="mainNav" class="navbar navbar-expand-md navbar-dark fixed-top bg-primary {{router?.url == '/home' ? '' : 'bg-primary'}}">
 	<div class="container">
 		<a class="navbar-brand" [routerLink]="['/', 'home']" routerLinkActive="active-link">
-			<img src="assets/img/angly-logo.png" class="img-fluid" width="110" height="37">
+			<!-- <img src="assets/img/angly-logo.png" class="img-fluid" width="110" height="37"> -->
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -24,19 +24,7 @@
 						</li>
 					</ul>
 				</li>
-				<li>
-					<div class="search-form" click-outside (clickOutside)="onClickOutside($event)">
-						<span data-target="#search-style-simple" (click)="searchActiveFunction()">
-							<i class="fa fa-search"></i>
-						</span>
-						<div class="module-container" [ngClass]="{'search-active': searchactive}" id="search-style-simple">
-							<form role="search" method="get" class="search-box" action="javascript:void(0);">
-								<input type="search" class="form-control" placeholder="Search" value="" name="" />
-								<button type="submit"><i class="fa fa-search"></i></button>
-							</form>
-						</div><!-- /module-container -->
-					</div><!-- /module -->
-				</li>
+				
 			</ul>
 		</div>
 	</div>
