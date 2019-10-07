@@ -1,6 +1,6 @@
 /*========== Home Css ==========*/
 .site-banner {
-  background: url("../../assets/img/index-banner.jpg");
+  background: url("../../assets/img/banner1.jpg");
   background-repeat: no-repeat;
   background-position: 100% 100%;
   background-size: cover;
@@ -21,9 +21,19 @@
     margin-bottom:1.3em;
   }
 }
+.p-graph {
+  width: 80%;
+  margin-top: -2%;
+  margin: auto;
+  text-align: center;
+  color: $white;
+  margin-bottom: 5%;
+}
 .inverse{
-  background:$white;
-  color:$gray-800 !important;
+  text-transform: uppercase;
+  background: #51BBFE;
+  border: none;
+  color:$white !important;
 }
 .content {
   margin: 0 auto;

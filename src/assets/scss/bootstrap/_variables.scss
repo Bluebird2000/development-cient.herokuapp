@@ -72,7 +72,8 @@ $grays: (
   900: $gray-900
 ) !default;
 
-$blue:    #007bff !default;
+$blue:    #51BBFE !default;
+$black:   #000000 !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
@@ -85,6 +86,7 @@ $cyan:    #17a2b8 !default;
 
 $colors: (
   blue: $blue,
+  black: $black,
   indigo: $indigo,
   purple: $purple,
   pink: $pink,
