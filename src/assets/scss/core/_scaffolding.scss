@@ -161,7 +161,7 @@ input, input::-moz-placeholder, textarea::-moz-placeholder {
   @include background-opacity($orange, 0.7);
 }
 .primary-layer {
-  @include background-opacity($blue, 0.8);
+  @include background-opacity($black, 0.8);
 }
 .primary-tp-layer {
   border-radius: 10px;

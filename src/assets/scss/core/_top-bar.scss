@@ -34,7 +34,7 @@
   .main-menu {
     display: inline-block;
     li {
-      font-size: 1rem;
+      font-size: .8rem;
       display: inline-block;
       text-transform: capitalize;
       position: relative;
@@ -42,6 +42,27 @@
       z-index: 5;
       a {
         color: $white;
+        font-family: 'Poppins', sans-serif !important;
+        font-weight: bold !important;
+        i {
+          position: absolute;
+          right: 5px;
+          top: 21px;
+        }
+      }
+    }
+    li:last-child{
+      font-size: 1rem;
+      display: inline-block;
+      text-transform: capitalize;
+      position: relative;
+      padding: 7px 8px;
+      z-index: 5;
+      a:last-child {
+        color: $white;
+        background-color: #D81159 !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-weight: bold !important;
         i {
           position: absolute;
           right: 5px;
