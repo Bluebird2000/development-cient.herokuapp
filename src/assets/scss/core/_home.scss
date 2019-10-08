@@ -21,6 +21,14 @@
     margin-bottom:1.3em;
   }
 }
+.inline-btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inline-btn-primary-link {
+  background: #51BBFE;
+}
 .p-graph {
   width: 80%;
   margin-top: -2%;
@@ -29,6 +37,7 @@
   color: $white;
   margin-bottom: 5%;
 }
+
 .inverse{
   text-transform: uppercase;
   background: #51BBFE;
