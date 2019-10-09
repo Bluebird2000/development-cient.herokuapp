@@ -8,9 +8,14 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-  { path: '/dashboard', title: 'Dashboard', icon: 'nc-single-02', class: '' },
-  { path: '/company-reg', title: 'Company Registrstions', icon: 'nc-single-02', class: ''},
-  { path: '/business-reg', title: 'Business Registrations', icon: 'nc-single-02', class: ''}
+  { path: '/dashboard', title: 'Dashboard', icon: 'ion-ios-home', class: '' },
+  { path: '/users', title: 'Users', icon: 'ion-ios-person', class: ''},
+  { path: '/forums', title: 'Forums', icon: 'ion-ios-mail', class: ''},
+  { path: '/messages', title: 'Messages', icon: 'ion-ios-mail', class: ''},
+  { path: '/market-place', title: 'Market Place', icon: 'ion-ios-mail', class: ''},
+  { path: '/settings', title: 'Settings', icon: 'ion-ios-settings', class: ''},
+  { path: '/notifications', title: 'Notifications', icon: 'ion-ios-mail', class: ''},
+  { path: '/log-out', title: 'Log Out', icon: 'ion-ios-mail', class: ''}
 ];
 
 @Component({
