@@ -23,6 +23,7 @@
     li {
       .nav-link {
         color: $gray-700;
+        font-weight: bold !important;
       }
     }
   }
@@ -34,11 +35,12 @@
   .main-menu {
     display: inline-block;
     li {
-      font-size: .8rem;
+      font-size: .9rem;
       display: inline-block;
       text-transform: capitalize;
       position: relative;
-      padding: 7px 8px;
+      padding: 7px 22px;
+      font-weight: bold !important;
       z-index: 5;
       a {
         color: $white;
@@ -56,10 +58,10 @@
       display: inline-block;
       text-transform: capitalize;
       position: relative;
-      padding: 7px 8px;
       z-index: 5;
       a:last-child {
         color: $white;
+        padding: 8px 15px;
         background-color: #D81159 !important;
         font-family: 'Poppins', sans-serif !important;
         font-weight: bold !important;
