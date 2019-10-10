@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 .admin-header {
   display: flex;
   justify-content: space-between;
@@ -8,16 +13,8 @@
   border-radius: 50%;
 }
 
-/* .header-search {
-  display: flex;
-  color: #8C8989;
-  justify-content: space-around;
-  align-items: center;
-} */
-
 i.fa-search {
   padding: 10px;
-  /* margin-left: 10px;  */
   color: #101596;
   font-size: 20px;
   background-color: #eee;
@@ -25,6 +22,67 @@ i.fa-search {
 
 .header__search__banner {
   display: flex;
-  width: 15%;
+  min-width: 15%;
   justify-content: space-between;
+  color: #8C8989;
+}
+
+.card {
+  background-color: #F3DBE4;
+  margin-top: 20px;
+  padding: 14px 50px;
+  box-shadow: none;
+  color: #8C8989;
+  display: flex;
+}
+
+.card h3 {
+  color: #D81159;
+  margin-bottom: 0px;
+  font-size: 20px;
+  font-weight: 600
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.info-details {
+  background-color: #fff;
+  margin: 3%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+}
+
+.info-details img {
+  width: 30%;
+}
+
+.user {
+  font-size: 30px;
+  margin-top: 10%;
+  font-weight: 500;
+  color: #D81159;
+}
+
+.forum {
+  font-size: 30px;
+  margin-top: 10%;
+  font-weight: 500;
+  color: #218380;
+}
+
+.store {
+  font-size: 30px;
+  margin-top: 10%;
+  font-weight: 500;
+  color: #FFBC42;
+}
+
+.text {
+  color: #000000;
+  font-weight: bold;
 }
