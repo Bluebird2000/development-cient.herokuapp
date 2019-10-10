@@ -17,7 +17,7 @@ export const SessionRoutes: Routes = [{
     component: LoginComponent
   },
   {
-    path: 'sign-up',
+    path: 'signup',
     component: SignUpComponent
   },
   {
