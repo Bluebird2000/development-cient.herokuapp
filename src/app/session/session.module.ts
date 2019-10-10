@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SessionRoutes } from './session.routing';
 import { WidgetsModule } from '../widgets/widgets.module';
 
@@ -16,7 +16,9 @@ import { NotFoundComponent } from './notFound/notFound.component';
   imports: [
     CommonModule,
     RouterModule.forChild(SessionRoutes),
-    WidgetsModule
+    WidgetsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
 	  LoginComponent,
