@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 /* Service */
 import { ChkService } from './service/chk.service';
+import { AuthService } from './service/auth.service';
+
 
 /* components */
 import { AppComponent } from './app.component';
@@ -70,7 +72,8 @@ import { ComponentsModule } from './dashboard/dashboard-layout/components/compon
    providers: [
       MenuItems,
       PageTitleService,
-      ChkService
+      ChkService,
+      AuthService
    ],
    bootstrap: [AppComponent]
 })

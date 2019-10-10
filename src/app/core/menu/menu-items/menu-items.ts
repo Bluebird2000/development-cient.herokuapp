@@ -42,7 +42,7 @@ const HEADERMENUITEMS = [
       type:"link"
    },
    {
-      state: "home",
+      state: "login",
       name: "GET STARTED",
       type:"link"
    },
