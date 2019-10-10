@@ -7,6 +7,8 @@ import { WidgetsModule } from '../widgets/widgets.module';
 
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './signUp/signUp.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component'
 import { ThankYouComponent } from './thankYou/thankYou.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { NotFoundComponent } from './notFound/notFound.component';
@@ -22,7 +24,9 @@ import { NotFoundComponent } from './notFound/notFound.component';
   ],
   declarations: [
 	  LoginComponent,
-	  SignUpComponent,
+    SignUpComponent,
+    ResetPasswordComponent,
+    ConfirmationComponent,
 	  ThankYouComponent,
 	  MaintenanceComponent,
 	  NotFoundComponent,

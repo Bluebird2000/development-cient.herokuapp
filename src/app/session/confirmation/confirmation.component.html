@@ -1,0 +1,55 @@
+<div class="container__wrapper">
+  <div class="left__side__banner">
+      <div class="form__content">
+      <h3>Account confirmation</h3>
+      <form>
+          <div class="input-container" *ngIf="!response && !noResponseErr">
+            <div class="u-center-text">
+              <i class="fa fa-spinner fa-spin fa-3x"></i>
+            </div>
+          </div>
+          <div class="input-container" *ngIf="noResponseErr && !response">
+            <div class="u-center-text text-danger">
+              <h6>Sorry this operation could not be completed at this time. Please try again</h6>
+            </div>
+          </div>
+
+          <div class="input-container" *ngIf="response && !noResponseErr">
+              <div class="col-12 u-center-text" *ngIf="responseErr && !showresend">
+                <i class="fa fa-exclamation-circle mb-2 text-warning fa-3x"></i>
+                <h6>{{responseErr}}</h6>
+                <button (click)="showResend()" class="sub-btn sub-btn-primary" style="background-color:#172b4d">Click To Resend </button>
+              </div>
+              <div *ngIf="showresend" class="col-12 u-center-text">
+                  <div class="input-container">
+                      <i class="fa fa-envelope icon"></i>
+                      <input class="input-field" type="email" placeholder="Email Address" name="email" #emailfield="ngModel" [(ngModel)]="email" autocomplete="off">
+                  </div>
+                  <div class="invalid" *ngIf="emailfield.invalid && emailfield.touched">
+                    <span *ngIf="emailfield.errors.required">Username is required</span>
+                    <span *ngIf="emailfield.errors.email">Invalid email address</span>
+                  </div>
+                  <div class="input-container submit">
+                    <button  [disabled]="getSubmitState(emailfield)" class="sub-btn sub-btn-primary" (click)="resend()">
+                      <i *ngIf="disableBtn" class="fa fa-spinner fa-spin"></i>Submit</button>
+                  </div>
+
+              </div>
+              <div class="col-12 u-center-text" *ngIf="!responseErr && !showresend">
+                <p class="py-1">Account has been verified. <br /> Please log in  </p>
+                <div class="u-center-text">
+                  <button (click)="login()" class="sub-btn sub-btn-primary">Sign in</button>
+                </div>
+              </div>
+            </div>
+          </form>
+      </div>
+  </div>
+  <div class="right__side__banner">
+      <div class="show__content">
+          <h3>Hello Friend !</h3>
+      <p class="py-1">Join millions of women on the<br /> platform. Enjoy!</p>
+      <a routerLink="/signup" class="button button-primary">SIGN UP</a>
+      </div>
+  </div>
+</div>
