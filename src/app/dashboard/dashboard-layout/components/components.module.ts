@@ -16,7 +16,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     RouterModule
   ],
   exports: [
-    SidebarComponent
+    SidebarComponent,
+    NavbarComponent
   ]
 })
 export class ComponentsModule { }
