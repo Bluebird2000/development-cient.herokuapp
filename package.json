@@ -1,5 +1,5 @@
 {
-  "name": "angly",
+  "name": "pregnancyvillage",
   "version": "3.0.0",
   "license": "MIT",
   "scripts": {
@@ -47,7 +47,9 @@
     "rxjs-compat": "^6.5.2",
     "typescript": "3.4.5",
     "web-animations-js": "^2.3.1",
-    "zone.js": "^0.9.1"
+    "zone.js": "^0.9.1",
+    "sweetalert2": "^8.17.6",
+    "ng2-validation": "^4.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.800.0",
