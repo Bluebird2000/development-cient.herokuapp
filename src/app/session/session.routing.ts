@@ -31,6 +31,10 @@ export const SessionRoutes: Routes = [{
     component: ConfirmationComponent
   },
   {
+    path: 'forget-password',
+    component: ResetPasswordComponent
+  },
+  {
     path: 'thank-you',
     component: ThankYouComponent
   },
