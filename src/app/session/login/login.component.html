@@ -1,41 +1,46 @@
-<!-- Sign In Layout -->
-<div class="session-wrapper">
-	<div class="container container-full-width">
-		<div class="row">
-			<div class="col-sm-12 col-md-11 col-lg-9 mx-auto">
-				<div class="row no-gutters">
-					<div class="col-sm-12 col-md-6 d-xs-none">
-						<div class="card text-white border-rad shadow border-0 z-index">
-							<img class="card-img img-fluid" src="assets/img/login.png" alt="Card image" width="400" height="500" />
-						</div>
-					</div>
-					<div class="col-sm-12 col-md-6 py-5">
-						<div class="card border-0 p-4 rounded-0 card-shadow">
-							<form class="session-form" action="javascript:void(0)" method="post">
-								<div class="social-widget mb-4">
-									<h2 class="text-capitalize font-2x mb-4">Sign In</h2>
-								</div><!-- Social widget closed -->
-								<div class="mb-5">
-									<div class="form-group">
-										<label for="InputEmail1">Email Address</label>
-										<input type="email" class="form-control form-control-lg" id="InputEmail1" required>
-									</div>
-									<div class="form-group">
-										<label for="password">Password</label>
-										<input type="password" class="form-control form-control-lg" id="password" required>
-									</div>
-								</div>
-								<div class="form-group">
-									<button type="submit" class="btn btn-primary btn-block btn-lg submit-btn">Sign In</button>
-								</div>
-								<div class="form-group text-center">
-									<p>New User ?  <a routerLink="/sign-up"> Register Now</a></p>
-								</div>
-							</form><!-- session form closed -->
-						</div>
-					</div>
+<div class="container__wrapper">
+		<div class="left__side__banner">
+			<div class="form__content">
+			<h3>Sign In</h3>
+			<p class="py-1">Enter your details to login into your<br /> account</p>
+			<div class="invalid mb-3" role="alert" *ngIf="loginErr">
+			  <button aria-label="Close" class="close ng-star-inserted" (click)="clearLoginErr()" type="button"><span aria-hidden="true" style="font-size: 14px; text-align: centre;">×</span></button>{{loginErrorMsg}}
+			</div>
+			<form [formGroup]="loginForm" (ngSubmit)="login()">
+				<div class="input-container">
+					<i class="fa fa-envelope icon"></i>
+					<input class="input-field" type="text" placeholder="Email Address" name="email" formControlName="username" autocomplete="off">
 				</div>
+				<div class="invalid" *ngIf="username.invalid && username.touched">
+					<span *ngIf="username.errors.required">Username is required</span>
+					<span *ngIf="username.errors.email">Invalid email address</span>
+				  </div>
+				<div class="input-container">
+					<i class="fa fa-key icon"></i>
+					<input formControlName="password" class="input-field" type="password" placeholder="Password" name="psw" autocomplete="off">
+				</div>
+				<div class="invalid" *ngIf="password.invalid && password.touched">
+				  <span *ngIf="password.errors.required">Password  is required</span>
+				</div>
+				<div class="input-container submit">
+					<a routerLink="/signup" class="button button-primary-2 mobile">SIGN UP</a>
+				  <button type="submit"  [disabled]="getDisableState" class="sub-btn sub-btn-primary"><i *ngIf="disableBtn" class="fa fa-spinner fa-spin"></i>Sign In</button>
+				</div>
+	
+				<a class="link" routerLink="/forget-password">forget password?</a>
+				<div class="social__media__auth">
+				  <a href="#" class="fa fa-facebook"></a>
+				  <a href="#" class="fa fa-google"></a>
+				</div>
+			</form>
 			</div>
 		</div>
-	</div><!-- container closed -->
-</div><!-- session Wrapper closed -->
+		<div class="right__side__banner">
+			<div class="show__content">
+				<h3>Hello Friend !</h3>
+			<p class="py-1">Join millions of women on the<br /> platform. Enjoy!</p>
+			<a routerLink="/signup" class="button button-primary">SIGN UP</a>
+			</div>
+		</div>
+	</div>
+	

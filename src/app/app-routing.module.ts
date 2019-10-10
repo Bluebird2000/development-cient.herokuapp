@@ -19,6 +19,10 @@ export const AppRoutes: Routes = [{
    },
    {
       path: '',
+      loadChildren: () => import('./session/session.module').then(m => m.SessionModule)
+   },
+   {
+      path: '',
       component: MainComponent,
       children: [
          {
@@ -54,10 +58,12 @@ export const AppRoutes: Routes = [{
          }, {
             path: 'sidebar-widgets',
             component: sidebarWidgetsComponent
-         }, {
-            path: '',
-            loadChildren: () => import('./session/session.module').then(m => m.SessionModule)
-         }, {
+         },
+         //  {
+         //    path: '',
+         //    loadChildren: () => import('./session/session.module').then(m => m.SessionModule)
+         // },
+          {
             path: '',
             loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)
          }, {
