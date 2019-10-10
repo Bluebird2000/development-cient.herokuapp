@@ -21,6 +21,7 @@ export const AppRoutes: Routes = [{
       path: '',
       loadChildren: () => import('./session/session.module').then(m => m.SessionModule)
    },
+   
    {
       path: '',
       component: MainComponent,
