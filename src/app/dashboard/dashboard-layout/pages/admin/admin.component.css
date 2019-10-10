@@ -1,0 +1,30 @@
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-responsive {
+  border-radius: 50%;
+}
+
+/* .header-search {
+  display: flex;
+  color: #8C8989;
+  justify-content: space-around;
+  align-items: center;
+} */
+
+i.fa-search {
+  padding: 10px;
+  /* margin-left: 10px;  */
+  color: #101596;
+  font-size: 20px;
+  background-color: #eee;
+}
+
+.header__search__banner {
+  display: flex;
+  width: 15%;
+  justify-content: space-between;
+}
