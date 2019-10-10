@@ -1,5 +1,8 @@
 .table{
 
+    border-collapse: separate;
+    border-spacing: 0 10px;
+
     .img-wrapper{
       width: 40px;
       height: 40px;
@@ -46,10 +49,10 @@
     }
 
    > thead > tr > th{
-       font-size: 14px;
-       font-weight: $font-weight-bold;
+       font-size: 12px;
+    //    font-weight: $font-weight-bold;
        padding-bottom: 0;
-       text-transform: uppercase;
+    //    text-transform: uppercase;
        border: 0;
    }
 
@@ -72,14 +75,14 @@
             }
         }
    }
-   > thead > tr > th,
    > tbody > tr > th,
    > tfoot > tr > th,
    > thead > tr > td,
    > tbody > tr > td,
    > tfoot > tr > td{
-       padding: 12px 7px;
+       padding: 20px 7px;
        vertical-align: middle;
+       background: #fff;
    }
 
    .th-description{
@@ -160,7 +163,6 @@
 }
 
 .table-responsive{
-  overflow: scroll;
   padding-bottom: 10px;
 }
 
@@ -168,6 +170,6 @@
     margin-bottom: 30px;
 }
 
-.table-hover>tbody>tr:hover{
-  background-color: #f5f5f5;
+.table>tbody>tr:hover{
+  border: 1px solid $default-body-bg !important;
 }
