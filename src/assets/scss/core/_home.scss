@@ -68,6 +68,7 @@
   width: 80%;
   margin-top: -2%;
   margin: auto;
+  font-size: 16px;
   text-align: center;
   color: $white;
   margin-bottom: 5%
@@ -358,7 +359,17 @@ padding-top: 6.25rem;
 .util-margin-top-med {
   margin-top: 5%;
 }
+.align__content {
+  text-align: center;
+}
+.heading__five {
+  font-size: 16px;
+  margin-bottom: 5%;
+}
 
+.section-img-responsive {
+  width: 12%;
+}
 .pt-6{
 	padding-top: 5rem;
 }
