@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { DashboardLayoutRoutes } from './dashboard-layout-routing.module';
 import { AdminComponent } from './pages/admin/admin.component';
 import { RouterModule } from '@angular/router';
+import { UsersComponent } from './pages/users/users.component';
 
 
 @NgModule({
   declarations: [
-    AdminComponent
+    AdminComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,

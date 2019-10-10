@@ -1,64 +1,70 @@
-<!-- Sign Up Layout -->
-<div class="session-wrapper">
-	<div class="container container-full-width">
-		<div class="row">
-			<div class="col-sm-12 col-md-11 col-lg-10 mx-auto">
-				<div class="row no-gutters">
-					<div class="col-sm-12 col-md-6 d-xs-none">
-						<div class="card text-white border-rad shadow-md border-0">
-							<img class="card-img w-100" src="assets/img/sign-up.png" alt="Card image" width="445" height="649" />
-							<div class="card-img-overlay border-rad p-4">
-								<h2 class="text-white display-3 fw-700 text-uppercase">Wel<br>Come!</h2>
-								<p class="card-text font-3x text-uppercase">Register and enjoy our benifits</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-md-6 py-4">
-						<div class="card border-0 p-4 card-shadow">
-							<form class="session-form" action="javascript:void(0)" method="post">
-								<div class="social-widget mb-4">
-									<h2 class="text-capitalize font-2x mb-4">Sign Up</h2>
-									<ul class="list-inline">
-										<li class="list-inline-item">
-											<a href="javascript:void(0)" class="square-50 bg-facebook">
-												<i class="fa fa-facebook fa-inverse"></i>
-											</a>
-										</li>
-										<li class="list-inline-item">
-											<a href="javascript:void(0)" class="square-50 bg-twitter">
-												<i class="fa fa-twitter fa-inverse"></i>
-											</a>
-										</li>
-										<li class="list-inline-item">
-											<a href="javascript:void(0)" class="square-50 bg-google">
-												<i class="fa fa-google-plus fa-inverse"></i>
-											</a>
-										</li>
-									</ul>
-								</div><!-- Social widget closed -->
-								<div class="form-group">
-									<label for="InputEmail1">Email Address</label>
-									<input type="email" class="form-control form-control-lg" id="InputEmail1" required>
-								</div>
-								<div class="form-group">
-									<label for="password">Password</label>
-									<input type="password" class="form-control form-control-lg" id="password" required>
-								</div>
-								<div class="form-group">
-									<label for="c-password">Confirm Password</label>
-									<input type="password" class="form-control form-control-lg" id="c-password" required>
-								</div>
-								<div class="form-group">
-									<button type="submit" class="btn btn-primary btn-block btn-lg submit-btn">Register</button>
-								</div>
-								<div class="form-group text-center">
-									<p>Already Member?  <a routerLink="/login"> Login</a></p>
-								</div>
-							</form><!-- session form closed -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!-- container closed -->
-</div><!-- session Wrapper closed -->
+<div class="container__wrapper">
+    <div class="right__side__banner">
+      <div class="show__content">
+          <h3>Welcome Back !</h3>
+        <p class="py-1">To keep connected to us, enter <br /> your login details!</p>
+        <a routerLink="/login" class="button button-primary">SIGN In</a>
+      </div>
+    </div>
+
+    <div class="left__side__banner">
+      <div class="form__content">
+        <h3>Sign Up</h3>
+        <p class="py-1">Enter your details to create an <br> account</p>
+        <div class="invalid mb-3" role="alert" *ngIf="registerErr">
+            <button aria-label="Close" class="close ng-star-inserted" (click)="clearRegisterErr()" type="button"><span aria-hidden="true" style="font-size: 14px; text-align: centre;">×</span></button>{{registerErrorMsg}}
+          </div>
+        <form [formGroup]="signupForm" (ngSubmit)="register()">
+            <div class="input-container">
+              <i class="fa fa-user icon"></i>
+              <input class="input-field" type="text" placeholder="First Name" name="firstname" formControlName="firstName" autocomplete="off">
+            </div>
+            <div class="invalid" *ngIf="firstName.invalid && firstName.touched">
+              <span *ngIf="firstName.errors.required">First Name is required</span>
+              <span *ngIf="firstName.errors.maxlength">Maximum characters is 30</span>
+              <span *ngIf="firstName.errors.minlength">Minimum characters is 3</span>
+            </div>
+            <div class="input-container">
+              <i class="fa fa-user icon"></i>
+              <input class="input-field" type="text" placeholder="Last Name" name="lastname" formControlName="lastName" autocomplete="off">
+            </div>
+            <div class="invalid" *ngIf="lastName.invalid && lastName.touched">
+                <span *ngIf="lastName.errors.required">Last Name is required</span>
+                <span *ngIf="lastName.errors.maxlength">Maximum characters is 30</span>
+                <span *ngIf="lastName.errors.minlength">Minimum characters is 3</span>
+              </div>
+             <div class="input-container">
+                <i class="fa fa-user-plus icon"></i>
+                <input class="input-field" type="email" placeholder="Email Address" name="email" formControlName="email" autocomplete="off">
+            </div>
+            <div class="invalid" *ngIf="email.invalid && email.touched">
+                <span *ngIf="email.errors.required">Email is required</span>
+                <span *ngIf="email.errors.email">Invalid email address</span>
+              </div>
+             <div class="input-container">
+                <i class="fa fa-key icon"></i>
+                <input class="input-field" type="password" placeholder="Password" name="psw" formControlName="password" autocomplete="off">
+            </div>
+            <div class="invalid" *ngIf="password.invalid && password.touched">
+                <span *ngIf="password.errors.required">Password  is required</span>
+              </div>
+            <div class="input-container">
+              <i class="fa fa-key icon"></i>
+              <input class="input-field" type="password" placeholder="Confirm Password" name="conpsw" formControlName="confirmPassword" autocomplete="off">
+            </div>
+            <div class="invalid" *ngIf="confirmPassword.invalid && confirmPassword.touched">
+              <span *ngIf="confirmPassword.errors?.required">Confirm Password is required</span>
+              <span *ngIf="confirmPassword.errors?.equalTo">Password does not match </span>
+            </div>
+            <div class="input-container submit">
+              <a routerLink="/login" class="button button-primary-2 mobile">SIGN In</a>
+              <button type="submit"  [disabled]="getDisableState" class="sub-btn sub-btn-primary"><i *ngIf="disableBtn" class="fa fa-spinner fa-spin"></i>Sign Up</button>
+            </div>
+            <div class="social__media__auth">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-google"></a>
+            </div>
+          </form>
+      </div>
+    </div>
+</div>
