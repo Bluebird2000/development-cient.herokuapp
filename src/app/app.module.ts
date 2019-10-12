@@ -1,3 +1,4 @@
+import { MainService } from './service/main-service.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -73,7 +74,8 @@ import { ComponentsModule } from './dashboard/dashboard-layout/components/compon
       MenuItems,
       PageTitleService,
       ChkService,
-      AuthService
+      AuthService,
+      MainService
    ],
    bootstrap: [AppComponent]
 })

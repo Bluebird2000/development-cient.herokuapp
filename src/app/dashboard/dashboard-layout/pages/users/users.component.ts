@@ -1,3 +1,4 @@
+import { AuthService } from './../../../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
-  constructor() { }
+  users;
+  constructor(private service: AuthService) { }
 
   ngOnInit() {
+    this.listUsers();
+  }
+
+  listUsers() {
+    this.service.listUsers().subscribe((data: any) => {
+      if (data) {
+        this.users = data.data;
+        console.log(data.data);
+
+      }
+    });
   }
 
 }

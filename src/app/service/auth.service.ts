@@ -43,6 +43,7 @@ export class AuthService {
   login(data: LoginInterface) {
     return this.http.post<any>(`${this.url}/login`, data).pipe(map(user => {
       if (user && user.data.tokenData.token) {
+        console.log(user);
         localStorage.setItem('currentUser', JSON.stringify(user.data));
       }
       return user;
@@ -52,7 +53,7 @@ export class AuthService {
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
-}
+  }
 
   resend(email: string) {
     const data = {email};
@@ -72,5 +73,9 @@ export class AuthService {
   resetPassword(password, id) {
     const body = {password, id};
     return this.http.post<any>(`${this.url}/reset_password`, body);
+  }
+
+  listUsers() {
+    return this.http.get<any>(`${this.url}/users`, this.appendAuthHeader());
   }
 }

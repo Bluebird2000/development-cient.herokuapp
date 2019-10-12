@@ -1,1 +1,77 @@
-<p>users works!</p>
+<div class="admin-header">
+    <div class="form-group form-inline">
+        Sort by <input class="form-control ml-2" type="text" name="searchTerm" />
+    </div>
+  <div class="header__search__banner">
+    <div class="search__icon">
+      <i class="fa fa-search"></i>
+    </div>
+  </div>
+</div>
+
+  <div class="text-center" *ngIf="users && (users.length === 0)">
+    <div class="loading-tab">
+        <i class="fa fa-frown-o fa-2x text-secondary"></i><br />
+        <h5 id="no-inflow-cat">No Users Yet</h5>
+    </div>
+  </div>
+  <div class="text-center" *ngIf="!(users)">
+      <div class="loading-tab">
+          <h5 id="pls-wait"><i class="fa fa-spinner fa-spin fa-1x"></i> Please Wait</h5>
+      </div>
+  </div>
+  <div *ngIf="users && users.length" class="table-responsive" id="local_data">
+    <!-- <form>
+      <div class="form-group form-inline">
+          Full text search: <input class="form-control ml-2" type="text" [formControl]="filter"/>
+      </div>
+    </form> -->
+
+    <table class="table table-responsive">
+      <thead>
+      <tr>
+          <th scope="col"></th>
+        <th scope="col">Names</th>
+        <th scope="col">created&nbsp;on</th>
+        <th>Last&nbsp;Login</th>
+        <th>Action</th>
+        <th scope="col" style="width: 60px;">Membership</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+          <td class="text-center"><p>View</p></td>
+        <td scope="row">{{user.firstName}}&nbsp;{{user.lastName}}</td>
+        <!-- <td><ngb-highlight [result]="user.lastName" [term]="filter.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="user.email" [term]="filter.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="user.role" [term]="filter.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="user.createdAt | date" [term]="filter.value"></ngb-highlight></td> -->
+        <td>{{user.createdAt | date: 'dd-mm-yyyy'}}</td>
+        <td>Online</td>
+        <td>
+            <span class="action-span">
+                <i class="icon fa fa-pencil fa-1.5x text-info"
+                  placement="auto" ngbTooltip="Edit User" id="editUser"></i>
+
+                <i style="margin-left: 20px;"
+                  class="icon fa fa-trash fa-1.5x text-danger" placement="auto"
+                  ngbTooltip="Delete User" id="deleteUSer"></i>
+              </span>
+        </td>
+        <td>{{user.role}}</td>
+        
+      </tr>
+      </tbody>
+    </table>
+
+    <!-- <div class="d-flex justify-content-between p-2">
+      <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+      </ngb-pagination>
+
+      <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+      </select>
+    </div> -->
+  </div>
