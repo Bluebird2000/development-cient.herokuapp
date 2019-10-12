@@ -7,7 +7,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 50px;
 }
+
 
 .img-responsive {
   border-radius: 50%;
