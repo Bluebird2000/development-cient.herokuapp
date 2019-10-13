@@ -29,11 +29,13 @@ i.fa-search {
   color:  #F41313 !important;
 }
 
-.table tbody>tr>td>p {
+.table tbody>tr>td>a {
+  padding: 10px;
+  color: #51bbfa;
   border: 2px solid #eee;
 }
 
-.table tbody>tr>td>p:hover {
+.table tbody>tr>td>a:hover {
   border: 2px solid #51bbfa;
 }
 

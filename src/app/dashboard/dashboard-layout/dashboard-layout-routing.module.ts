@@ -12,7 +12,7 @@ export const DashboardLayoutRoutes: Routes = [
     path: 'users', component: UsersComponent
   },
   {
-    path: 'view-user/:userId', component: ViewUserComponent
+    path: 'users/:userId', component: ViewUserComponent
   }
 ];
 
