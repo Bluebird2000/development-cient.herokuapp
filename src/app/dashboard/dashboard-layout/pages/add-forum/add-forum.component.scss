@@ -1,6 +1,55 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { @content }; //600px
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { @content }; //900px
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { @content }; //1200px
+  }
+}
+
 .header{
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 50px 0 20px 0;
 }
+
+.submit {
+  display: flex;
+  justify-content: center;
+  
+  & .sub-btn {
+    text-transform: uppercase;
+    margin-top: 2%;
+    padding: 10px 30px;
+    border-radius: 100px;
+    color: #ffffff;
+    border: none;
+    background-color: #51BBFE;
+  
+    &:hover {
+      opacity: 0.9;
+    }
+  
+    @include respond(phone) {
+      padding: 8px 30px;
+    }
+  }
+  
+  & .secondary {
+    background: #8C8989;
+  }
+  }
+  
+  .link {
+  color: #000000;
+  
+  &:hover {
+    color: #51BBFE;
+  }
+  }
