@@ -1,0 +1,261 @@
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+} */
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { @content }; //600px
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { @content }; //900px
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { @content }; //1200px
+  }
+}
+
+.user {
+  padding: 0 100px;
+  overflow: hidden;
+}
+
+@media(max-width: 600px) {
+  .user{
+    padding: 0;
+  }
+}
+
+.user-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 20px 0;
+}
+
+.img-responsive {
+  border-radius: 50%;
+}
+
+.form-check-input {
+  margin-left: 0;
+}
+.gender-field {
+  display: flex;
+}
+
+.form-check .form-check-label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  /* padding-left: 35px; */
+  margin-right: 10px;
+  margin-bottom: 0;
+  line-height: 0;
+}
+
+.form-check {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.form-check:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.form-check input:checked ~ .checkmark {
+  background-color: #51BBFE;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.form-check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.form-check .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.button {
+
+  &:link, &:visited {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      margin-top: 2%;
+      padding: 12px 50px;
+      border-radius: 100px;
+      transition: all .2s;
+      position: relative;
+
+      @include respond(phone) {
+        padding: 8px 30px;
+      }
+  }
+
+
+
+  &:hover {
+      transform: translateY(-3px);
+      box-shadow:  0 10px 20px rgba(#000000, 0.4);
+  }
+
+  &:active {
+      transform: translateY(-1px);
+      box-shadow:  0 5px 10px rgba(#000000, 0.4);
+  }
+
+  &-primary {
+      background-color: transparent;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+
+      &:hover {
+        opacity: 0.9;
+        color: #ffffff;
+    }
+
+      &::after {
+          background-color: #ffffff;
+      }
+  }
+
+  &-primary-2 {
+      background-color: #51BBFE;
+      color: #ffffff;
+
+      &:hover {
+          background-color: #51BBFE;
+          color: #ffffff;
+          border: none;
+      }
+  }
+
+  &-primary-3 {
+    background-color: #eec643;
+    color: #000000;
+
+    &:hover {
+        background-color: #51BBFE;
+        color: #ffffff;
+        border: none;
+    }
+}
+
+  &::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .4s;
+  }
+
+  &:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+  }
+
+}
+
+.button-text {
+  &:link, &:visited {
+      color: #ffffff;
+      font-size: 1.5rem;
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 1px solid #ffffff;
+      padding: .3rem;
+      transition: all .2s;
+  }
+
+  @include respond(phone) {
+    font-size: 1rem;
+    padding: .1rem;
+  }
+
+  &:hover {
+      background-color: #ffffff;
+      color: #777777;
+      box-shadow: 0 1rem  2rem rgba(#777777, 0.3);
+      transform: tr anslateY(-.2rem);
+  }
+  &:active {
+      box-shadow: 0 .5rem 1rem rgba(#777777, 0.3);
+      transform: translateY(0);
+  }
+}
+
+.submit {
+display: flex;
+justify-content: center;
+
+& .sub-btn {
+  text-transform: uppercase;
+  margin-top: 2%;
+  padding: 10px 50px;
+  border-radius: 100px;
+  color: #ffffff;
+  border: none;
+  background-color: #51BBFE;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @include respond(phone) {
+    padding: 8px 30px;
+  }
+}
+
+& .secondary {
+  background: #8C8989;
+}
+}
+
+.link {
+color: #000000;
+
+&:hover {
+  color: #51BBFE;
+}
+}
