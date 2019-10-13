@@ -5,12 +5,16 @@ import { DashboardLayoutRoutes } from './dashboard-layout-routing.module';
 import { AdminComponent } from './pages/admin/admin.component';
 import { RouterModule } from '@angular/router';
 import { UsersComponent } from './pages/users/users.component';
+import { ViewUserComponent } from './pages/view-user/view-user.component';
+import { AddForumComponent } from './pages/add-forum/add-forum.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
-    UsersComponent
+    UsersComponent,
+    ViewUserComponent,
+    AddForumComponent
   ],
   imports: [
     CommonModule,
