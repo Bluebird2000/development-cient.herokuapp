@@ -21,6 +21,10 @@ export class MainService {
     };
   }
 
+  addForum(data: any) {
+    return this.http.post<any>(`${this.url}/topic`, data, this.appendAuthHeader());
+  }
+
   listForums() {
     return this.http.get<any>(`${this.url}/topic`, this.appendAuthHeader());
   }
