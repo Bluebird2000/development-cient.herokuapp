@@ -4,10 +4,10 @@ import { ChkService } from '../service/chk.service';
 
 @Component({
   selector: 'angly-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  templateUrl: './forum.component.html',
+  styleUrls: ['./forum.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class ForumComponent implements OnInit {
 
    /* Variables */
    services : any;
