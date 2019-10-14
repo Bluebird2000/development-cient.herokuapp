@@ -27,7 +27,7 @@ const HEADERMENUITEMS = [
       type:"link"
    },
    {
-      state: "home",
+      state: "forum",
       name: "FORUMS",
       type:"link"
    },
@@ -136,7 +136,7 @@ const FOOTERMENU = [
       type:"link"
    },
    {
-      state:"about",
+      state:"forum",
       name:"About",
       type:"link"
    }

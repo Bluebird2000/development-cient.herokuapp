@@ -7,7 +7,7 @@ import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { FeaturesComponent } from './features/features.component';
-import { AboutComponent } from './about/about.component';
+import { ForumComponent } from './forum/forum.component';
 import { SearchComponent } from './search/search.component';
 import { SupportComponent } from './support/support.component';
 import { sidebarWidgetsComponent } from './sidebarWidgets/sidebarWidgets.component';
@@ -42,8 +42,8 @@ export const AppRoutes: Routes = [{
             path: 'features',
             component: FeaturesComponent
          }, {
-            path: 'about',
-            component: AboutComponent
+            path: 'forum',
+            component: ForumComponent
          }, {
             path: 'search',
             component: SearchComponent
@@ -69,7 +69,7 @@ export const AppRoutes: Routes = [{
             loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)
          }, {
             path: 'about/:keyword',
-            component: AboutComponent
+            component: ForumComponent
       	},
       ]
    },
