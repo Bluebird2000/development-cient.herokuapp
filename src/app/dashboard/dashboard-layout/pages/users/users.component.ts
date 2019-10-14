@@ -19,7 +19,6 @@ export class UsersComponent implements OnInit {
       if (data) {
         this.users = data.data;
         console.log(data.data);
-
       }
     });
   }

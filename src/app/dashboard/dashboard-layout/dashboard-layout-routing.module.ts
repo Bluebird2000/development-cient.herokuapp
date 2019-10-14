@@ -1,3 +1,4 @@
+import { ViewForumComponent } from './pages/view-forum/view-forum.component';
 import { AddForumComponent } from './pages/add-forum/add-forum.component';
 import { ViewUserComponent } from './pages/view-user/view-user.component';
 import { UsersComponent } from './pages/users/users.component';
@@ -17,6 +18,9 @@ export const DashboardLayoutRoutes: Routes = [
   },
   {
     path: 'forums/add', component: AddForumComponent
+  },
+  {
+    path: 'forums', component: ViewForumComponent
   }
 ];
 

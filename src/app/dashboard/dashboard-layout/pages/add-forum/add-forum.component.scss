@@ -31,9 +31,10 @@
     color: #ffffff;
     border: none;
     background-color: #51BBFE;
+    cursor: pointer;
   
     &:hover {
-      opacity: 0.9;
+      opacity: 0.8;
     }
   
     @include respond(phone) {
@@ -52,4 +53,16 @@
   &:hover {
     color: #51BBFE;
   }
+  }
+
+  .form-control {
+    background: transparent;
+    padding: 4.5%;
+  }
+  .fc-padding {
+    padding: 2%;
+  }
+
+  textarea {
+    min-height: 250px;
   }
