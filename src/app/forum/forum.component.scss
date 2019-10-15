@@ -1,0 +1,32 @@
+.forum__questions__gap {
+    background-color: #E5E5E5;
+    padding: 5%;
+} 
+.profile-img-responsive {
+    border-radius: 100px;
+    // max-width: 50%;
+}
+.commenter-img-responsive {
+    border-radius: 100px;
+    max-width: 15%;
+}
+.list__all_categories {
+    background: #ffffff;
+    height: 80vh;
+}
+.categories {
+    padding: 8%;
+    text-align: center;
+    & .category__name{
+        font-size: 14px;
+    }
+    & .category__post__count {
+        font-size: 14px;
+        color: #777777;
+    }
+}
+.util__bottom {
+    margin-bottom: 10%;
+    // border-bottom: red !important;
+    // height: 40px;
+}
