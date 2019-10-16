@@ -8,6 +8,8 @@ import { UsersComponent } from './pages/users/users.component';
 import { ViewUserComponent } from './pages/view-user/view-user.component';
 import { AddForumComponent } from './pages/add-forum/add-forum.component';
 import { ViewForumComponent } from './pages/view-forum/view-forum.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { ViewForumComponent } from './pages/view-forum/view-forum.component';
   ],
   imports: [
     CommonModule,
+    NgbModule,
+    ReactiveFormsModule,
     RouterModule.forChild(DashboardLayoutRoutes)
   ]
 })

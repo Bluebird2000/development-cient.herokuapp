@@ -39,6 +39,10 @@ i.fa-search {
   border: 2px solid #51bbfa;
 }
 
+::ng-deep .progress-bar {
+  background-color: #51bbfe !important;
+}
+
 /* .table {
   margin-top: 20px;
   border-collapse: separate;
