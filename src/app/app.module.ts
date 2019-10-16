@@ -29,7 +29,7 @@ import { MenuToggleModule } from './core/menu-toggle.module';
 import { PageTitleService } from './core/page-title/page-title.service';
 import { WidgetsModule } from './widgets/widgets.module';
 import { FeaturesComponent } from './features/features.component';
-import { AboutComponent } from './about/about.component';
+import { ForumComponent } from './forum/forum.component';
 import { SearchComponent } from './search/search.component';
 import { SupportComponent } from './support/support.component';
 import { Footer2Component } from './footer2/footer2.component';
@@ -47,7 +47,7 @@ import { ComponentsModule } from './dashboard/dashboard-layout/components/compon
       HeaderComponent,
       MenuComponent,
       FeaturesComponent,
-      AboutComponent,
+      ForumComponent,
       SearchComponent,
       SupportComponent,
       Footer2Component,
