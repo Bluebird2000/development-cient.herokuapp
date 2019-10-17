@@ -26,7 +26,7 @@ export class AddCategoryComponent implements OnInit {
 
   get name() { return this.categoryForm.get('name'); }
   get description() { return this.categoryForm.get('description'); }
-  get getDisabledState() { return this.categoryForm.invalid || this.disabledBtn; }
+  get getDisableState() { return this.categoryForm.invalid || this.disabledBtn; }
   private getDisableBtn(value: boolean) { return this.disabledBtn = value; }
 
   categoryFormField() {
