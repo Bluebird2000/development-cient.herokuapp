@@ -1,16 +1,16 @@
 <div class="add-forum">
   <div class="header">
-    <h3>Add Forum Post</h3>
+    <h3>Add Forum Category</h3>
 </div>
 </div>
 
-<p *ngIf="disableBtn">
+<p *ngIf="disabledBtn">
 <ngb-progressbar type="info" [value]="addingCategory" [striped]="true" [animated]="true">
     creating {{addingCategory}}%
 </ngb-progressbar>
 </p>
 
-<form [formGroup]="categorymForm" (submit)="formSubmit()">
+<form [formGroup]="categoryForm" (submit)="formSubmit()">
   <div class="form-group">
     <input type="text" class="form-control fc-padding" [ngClass]="{'is-invalid': name.invalid && name.touched}" id="email" formControlName="name" placeholder="Add Post Title..">
     <div class="text-danger" *ngIf="name.touched && name.invalid" >

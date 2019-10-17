@@ -32,7 +32,7 @@ export class AddCategoryComponent implements OnInit {
   categoryFormField() {
     this.categoryForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
-      description: new FormControl(Validators.required)
+      description: new FormControl('', [Validators.required])
     });
   }
 
@@ -59,7 +59,7 @@ export class AddCategoryComponent implements OnInit {
           this.addingCategory = 10;
           clearInterval(this.setTimeProgress);
           setTimeout(() => this.error = false, 5000);
-          console.log(error);
+          console.log(error.error);
           this.errorMessage = error;
           this.getDisableBtn(false);
           this.loading = false;

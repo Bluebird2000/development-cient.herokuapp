@@ -28,7 +28,7 @@ export const DashboardLayoutRoutes: Routes = [
     path: 'category', component: CategoryComponent
   },
   {
-    path: 'add-category', component: AddCategoryComponent
+    path: 'category/add', component: AddCategoryComponent
   }
 ];
 
