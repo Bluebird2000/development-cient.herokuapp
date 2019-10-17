@@ -4,14 +4,45 @@
   </div>
 </div>
 
-<form action="">
+<p *ngIf="disableBtn">
+  <ngb-progressbar type="info" [value]="addingForum" [striped]="true" [animated]="true">
+      creating {{addingForum}}%
+  </ngb-progressbar>
+</p>
+
+<form [formGroup]="forumForm" (submit)="formSubmit()">
     <div class="form-group">
-      <input type="text" class="form-control" id="email" placeholder="Add Post Title..">
+      <input type="text" class="form-control fc-padding" [ngClass]="{'is-invalid': topic.invalid && topic.touched}" id="email" formControlName="topic" placeholder="Add Post Title..">
+      <div class="text-danger" *ngIf="topic.touched && topic.invalid" >
+        <span >Topic is required</span>
+      </div>
     </div>
+
     <div class="form-group">
-      <textarea name="" id="" rows="30" class="form-control" placeholder="Type in your post here explicitly"></textarea>
+      <select class="form-control fc-padding-2" id="category" [ngClass]="{'is-invalid': category.invalid && category.touched}" formControlName="category">
+        <option selected value="">Choose Category</option>
+        <option>Admin</option>
+      </select>
+      <div class="text-danger" *ngIf="category.touched && category.invalid" >
+        <span >Category is required</span>
+      </div>
     </div>
+
+    <div class="form-group">
+      <textarea formControlName="description" [ngClass]="{'is-invalid': description.invalid && description.touched}" rows="30" class="form-control fc-padding" placeholder="Type in your post here explicitly"></textarea>
+      <div class="text-danger" *ngIf="description.touched && description.invalid" >
+        <span >Description is required</span>
+      </div>
+    </div>
+
+    <div class="events">
+        <div class="alert alert-danger w-100" *ngIf="error">Error</div>
+        <div class="alert alert-success w-100" *ngIf="success">Post Created Succesfully</div>
+    </div>
+
+
     <div class="input-container submit">
-        <button type="submit" class="sub-btn">Create Forum Post</button>
+        <button type="submit" [disabled]="getDisableState" class="sub-btn">
+          Create Forum Post</button>
       </div>
   </form>

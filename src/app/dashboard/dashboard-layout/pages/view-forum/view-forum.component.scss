@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.loading-tab {
+  padding: 50px;
+}
+
 .form-control {
   border: 2px solid #51bbfa;
 }
@@ -37,10 +41,6 @@ i.fa-search {
 
 .table tbody>tr>td>a:hover {
   border: 2px solid #51bbfa;
-}
-
-::ng-deep .progress-bar {
-  background-color: #51bbfe !important;
 }
 
 /* .table {

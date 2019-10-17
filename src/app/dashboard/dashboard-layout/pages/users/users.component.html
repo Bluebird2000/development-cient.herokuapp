@@ -1,4 +1,4 @@
-<div class="admin-header">
+<div class="admin-header" *ngIf="users && users.length">
     <div class="form-group form-inline">
         Sort by <input class="form-control ml-2" type="text" name="searchTerm" />
     </div>
@@ -16,9 +16,9 @@
     </div>
   </div>
   <div class="text-center" *ngIf="!(users)">
-      <div class="loading-tab">
-          <h5 id="pls-wait"><i class="fa fa-spinner fa-spin fa-1x"></i> Please Wait</h5>
-      </div>
+      <ngb-progressbar type="info" [value]="fetchUserProgress" [striped]="true" [animated]="true">
+          creating {{fetchUserProgress}}%
+      </ngb-progressbar>
   </div>
   <div *ngIf="users && users.length" class="table-responsive" id="local_data">
     <!-- <form>

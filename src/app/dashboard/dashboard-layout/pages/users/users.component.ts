@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
   users;
+  fetchingUsers = false;
+  setTimeProgress;
+  fetchUserProgress = 10;
+
   constructor(private service: AuthService) { }
 
   ngOnInit() {
@@ -15,13 +19,23 @@ export class UsersComponent implements OnInit {
   }
 
   listUsers() {
+    this.fetchingUsers = true;
+    this.forumCreatingProgress();
     this.service.listUsers().subscribe((data: any) => {
       if (data) {
+        this.fetchingUsers = false;
+        clearInterval(this.setTimeProgress);
         this.users = data.data;
-        console.log(data.data);
-
       }
     });
+  }
+
+  forumCreatingProgress() {
+    this.setTimeProgress = setInterval(() => {
+      if (this.fetchUserProgress < 90) {
+        this.fetchUserProgress += 10;
+      }
+    }, 1000);
   }
 
 }
