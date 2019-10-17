@@ -5,6 +5,7 @@ import { ViewUserComponent } from './pages/view-user/view-user.component';
 import { UsersComponent } from './pages/users/users.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { Routes } from '@angular/router';
+import { AddCategoryComponent } from './pages/add-category/add-category.component';
 
 
 export const DashboardLayoutRoutes: Routes = [
@@ -26,5 +27,8 @@ export const DashboardLayoutRoutes: Routes = [
   {
     path: 'category', component: CategoryComponent
   },
+  {
+    path: 'add-category', component: AddCategoryComponent
+  }
 ];
 
