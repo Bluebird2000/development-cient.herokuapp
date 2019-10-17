@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
   users;
@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit {
 
   listUsers() {
     this.fetchingUsers = true;
-    this.forumCreatingProgress();
+    this.fetchingUsersProgress();
     this.service.listUsers().subscribe((data: any) => {
       if (data) {
         this.fetchingUsers = false;
@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  forumCreatingProgress() {
+  fetchingUsersProgress() {
     this.setTimeProgress = setInterval(() => {
       if (this.fetchUserProgress < 90) {
         this.fetchUserProgress += 10;
