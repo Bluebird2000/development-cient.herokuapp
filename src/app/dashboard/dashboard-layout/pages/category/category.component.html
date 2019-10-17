@@ -1,4 +1,4 @@
-<div class="admin-header">
+<div *ngIf="categories" class="admin-header">
   <div class="form-group form-inline">
       Sort by <input class="form-control ml-2" type="text" name="searchTerm" />
   </div>
@@ -16,9 +16,9 @@
   </div>
 </div>
 <div class="text-center" *ngIf="!(categories)">
-    <div class="loading-tab">
-        <h5 id="pls-wait"><i class="fa fa-spinner fa-spin fa-1x"></i> Please Wait</h5>
-    </div>
+  <ngb-progressbar type="info" [value]="fetchForumProgress" [striped]="true" [animated]="true">
+    creating {{fetchForumProgress}}%
+</ngb-progressbar>
 </div>
 <div *ngIf="categories && categories.length" class="table-responsive" id="local_data">
   <!-- <form>
@@ -31,23 +31,20 @@
     <thead>
     <tr>
         <th scope="col"></th>
-      <th scope="col">Names</th>
+      <th scope="col">Name</th>
       <th scope="col">created&nbsp;on</th>
-      <th>Last&nbsp;Login</th>
       <th>Action</th>
-      <th scope="col" style="width: 60px;">Membership</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let category of categories">
         <td class="text-center"><a [routerLink]="['/categories', category._id]">View</a></td>
-      <td scope="row">{{category.firstName}}&nbsp;{{category.lastName}}</td>
+      <td scope="row">{{category.name}}</td>
       <!-- <td><ngb-highlight [result]="category.lastName" [term]="filter.value"></ngb-highlight></td>
       <td><ngb-highlight [result]="category.email" [term]="filter.value"></ngb-highlight></td>
       <td><ngb-highlight [result]="category.role" [term]="filter.value"></ngb-highlight></td>
       <td><ngb-highlight [result]="category.createdAt | date" [term]="filter.value"></ngb-highlight></td> -->
       <td>{{category.createdAt | date: 'dd-mm-yyyy'}}</td>
-      <td>Online</td>
       <td>
           <span class="action-span">
               <i class="icon fa fa-pencil fa-1.5x text-info"
@@ -58,7 +55,6 @@
                 ngbTooltip="Delete category" id="deletecategory"></i>
             </span>
       </td>
-      <td>{{category.role}}</td>
       
     </tr>
     </tbody>
