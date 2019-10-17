@@ -10,6 +10,8 @@ import { AddForumComponent } from './pages/add-forum/add-forum.component';
 import { ViewForumComponent } from './pages/view-forum/view-forum.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CategoryComponent } from './pages/category/category.component';
+import { AddCategoryComponent } from './pages/add-category/add-category.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UsersComponent,
     ViewUserComponent,
     AddForumComponent,
-    ViewForumComponent
+    ViewForumComponent,
+    CategoryComponent,
+    AddCategoryComponent
   ],
   imports: [
     CommonModule,
