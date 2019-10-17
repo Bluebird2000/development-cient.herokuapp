@@ -28,4 +28,12 @@ export class MainService {
   listForums() {
     return this.http.get<any>(`${this.url}/topic`, this.appendAuthHeader());
   }
+
+  addCategory(data: any) {
+    return this.http.post<any>(`${this.url}/category`, data, this.appendAuthHeader());
+  }
+
+  listCategories() {
+    return this.http.get<any>(`${this.url}/category`, this.appendAuthHeader());
+  }
 }
