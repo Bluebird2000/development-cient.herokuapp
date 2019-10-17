@@ -10,6 +10,7 @@ export class ViewForumComponent implements OnInit {
   forums;
   setTimeProgress;
   fetchForumProgress = 10;
+
   constructor(private service: MainService) { }
 
   ngOnInit() {
@@ -22,7 +23,6 @@ export class ViewForumComponent implements OnInit {
       if (data) {
         this.forums = data.data;
         clearInterval(this.setTimeProgress);
-        console.log(this.forums);
       }
     });
   }

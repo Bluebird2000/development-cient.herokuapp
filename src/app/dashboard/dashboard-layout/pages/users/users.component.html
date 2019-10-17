@@ -30,9 +30,10 @@
     <table class="table table-responsive">
       <thead>
       <tr>
-          <th scope="col"></th>
+        <th scope="col"></th>
         <th scope="col">Names</th>
-        <th scope="col">created&nbsp;on</th>
+        <th scope="col">Created&nbsp;on</th>
+        <th scope="col">Status</th>
         <th>Last&nbsp;Login</th>
         <th>Action</th>
         <th scope="col" style="width: 60px;">Membership</th>
@@ -40,13 +41,14 @@
       </thead>
       <tbody>
       <tr *ngFor="let user of users">
-          <td class="text-center"><a [routerLink]="['/users', user._id]">View</a></td>
+        <td class="text-center"><a [routerLink]="['/users', user._id]">View</a></td>
         <td scope="row">{{user.firstName}}&nbsp;{{user.lastName}}</td>
         <!-- <td><ngb-highlight [result]="user.lastName" [term]="filter.value"></ngb-highlight></td>
         <td><ngb-highlight [result]="user.email" [term]="filter.value"></ngb-highlight></td>
         <td><ngb-highlight [result]="user.role" [term]="filter.value"></ngb-highlight></td>
         <td><ngb-highlight [result]="user.createdAt | date" [term]="filter.value"></ngb-highlight></td> -->
         <td>{{user.createdAt | date: 'dd-mm-yyyy'}}</td>
+        <td><p [ngClass]="{'active': user.active, 'inactive': !user.active}">{{userStatus(user.active)}}</p></td>
         <td>Online</td>
         <td>
             <span class="action-span">

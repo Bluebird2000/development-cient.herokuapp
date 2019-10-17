@@ -21,7 +21,10 @@
     <div class="form-group">
       <select class="form-control fc-padding-2" id="category" [ngClass]="{'is-invalid': category.invalid && category.touched}" formControlName="category">
         <option selected value="">Choose Category</option>
-        <option>Admin</option>
+        <option id="category-{{index}}" *ngFor="let category of categoryList; let index = index"
+        value="{{category._id}}">
+        {{category.name}}
+      </option>
       </select>
       <div class="text-danger" *ngIf="category.touched && category.invalid" >
         <span >Category is required</span>
