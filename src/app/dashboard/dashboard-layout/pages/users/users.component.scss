@@ -43,6 +43,20 @@ i.fa-search {
   background-color: #51bbfe !important;
 }
 
+.active {
+  color: #fff;
+  width: 60%;
+  background-color: #51bbfe;
+  text-align: center;
+  padding: 3px;
+}
+
+.inactive {
+  color: #fff;
+  background-color: #d81159;
+  text-align: center;
+  padding: 3px;
+}
 /* .table {
   margin-top: 20px;
   border-collapse: separate;

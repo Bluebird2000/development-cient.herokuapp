@@ -30,6 +30,11 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  userStatus(status) {
+    if (status) { return 'Active'; }
+    return 'Suspended';
+  }
+
   fetchingUsersProgress() {
     this.setTimeProgress = setInterval(() => {
       if (this.fetchUserProgress < 90) {

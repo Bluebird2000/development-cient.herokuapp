@@ -17,11 +17,13 @@ export class AddForumComponent implements OnInit {
   errorMessage;
   setTimeProgress;
   addingForum = 10;
+  categoryList = [];
 
   constructor(private service: MainService) { }
 
   ngOnInit() {
     this.forumFormField();
+    this.listCategories();
   }
 
   get topic() { return this.forumForm.get('topic'); }
@@ -29,6 +31,14 @@ export class AddForumComponent implements OnInit {
   get description() { return this.forumForm.get('description'); }
   get getDisableState() { return this.forumForm.invalid || this.disableBtn; }
   private getDisableBtn(value: boolean) { this.disableBtn = value; }
+
+  listCategories() {
+    this.service.listCategories().subscribe((data: any) => {
+      if (data) {
+        this.categoryList = data.data;
+      }
+    });
+  }
 
   forumFormField() {
     this.forumForm = new FormGroup({
