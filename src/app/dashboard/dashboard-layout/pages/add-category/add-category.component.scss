@@ -1,0 +1,93 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { @content }; //600px
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { @content }; //900px
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { @content }; //1200px
+  }
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  
+  & .sub-btn {
+    text-transform: uppercase;
+    margin-top: 2%;
+    padding: 10px 30px;
+    border-radius: 100px;
+    color: #ffffff;
+    border: none;
+    background-color: #51BBFE;
+    // cursor: pointer;
+  
+    &:hover {
+      opacity: 0.8;
+    }
+  
+    @include respond(phone) {
+      padding: 8px 30px;
+    }
+  }
+  
+  & .secondary {
+    background: #8C8989;
+  }
+  }
+  
+  .link {
+  color: #000000;
+  
+  &:hover {
+    color: #51BBFE;
+  }
+  }
+
+  .form-control {
+    background: transparent;
+    padding: 4.5%;
+  }
+  .fc-padding {
+    padding: 2%;
+  }
+
+  .fc-padding-2 {
+    padding: 0 2%;
+  }
+
+  textarea {
+    min-height: 250px;
+  }
+
+  .text-danger {
+    color: #d81159 !important;
+    font-weight: 100 !important;
+    font-size: 10px !important;
+  }
+
+  .alert-danger {
+    background-color: #d81159 !important;
+  }
+
+  ::ng-deep .progress-bar {
+    background-color: #51bbfe !important;
+  }
+
+.events {
+  padding: 5px 30%;
+}
