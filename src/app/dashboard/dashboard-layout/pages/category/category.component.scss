@@ -47,6 +47,27 @@ i.fa-search {
   background-color: #51bbfe !important;
 }
 
+#myBtn {
+  position: fixed;
+  height: 80px;
+  width: 80px;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #51bbfe;
+  color: white;
+  cursor: pointer;
+  padding: 25px;
+  border-radius: 100%;
+}
+
+#myBtn:hover {
+  background-color: #51bbfa;
+}
+
 /* .table {
   margin-top: 20px;
   border-collapse: separate;

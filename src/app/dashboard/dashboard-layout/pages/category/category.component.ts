@@ -22,7 +22,6 @@ export class CategoryComponent implements OnInit {
       if (data) {
         this.categories = data.data;
         clearInterval(this.setTimeProgress);
-        console.log(this.categories);
       }
     });
   }
