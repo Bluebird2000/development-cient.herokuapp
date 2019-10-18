@@ -10,7 +10,7 @@
     </a> -->
   <!-- </div> -->
     <ul class="nav pt-5">
-        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+        <li *ngFor="let menuItem of allMenus" routerLinkActive="active" class="{{menuItem.class}}">
             <a [routerLink]="[menuItem.path]">
                 <i class="{{menuItem.icon}}"></i>
                 <p>{{menuItem.title}}</p>

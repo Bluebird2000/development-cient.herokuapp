@@ -6,6 +6,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { Routes } from '@angular/router';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
+import { AdminGuard } from '../../core/guard/admin.guard';
 
 
 export const DashboardLayoutRoutes: Routes = [
@@ -13,10 +14,10 @@ export const DashboardLayoutRoutes: Routes = [
     path: 'dashboard', component: AdminComponent
   },
   {
-    path: 'users', component: UsersComponent
+    path: 'users', component: UsersComponent, canActivate: [AdminGuard]
   },
   {
-    path: 'users/:userId', component: ViewUserComponent
+    path: 'users/:userId', component: ViewUserComponent, canActivate: [AdminGuard]
   },
   {
     path: 'forums/add', component: AddForumComponent
