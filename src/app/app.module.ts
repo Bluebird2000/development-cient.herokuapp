@@ -37,6 +37,7 @@ import { sidebarWidgetsComponent } from './sidebarWidgets/sidebarWidgets.compone
 import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard-layout.component';
 import { ComponentsModule } from './dashboard/dashboard-layout/components/components.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { UserDataService } from './service/user-data.service';
 
 @NgModule({
    declarations: [
@@ -77,7 +78,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
       PageTitleService,
       ChkService,
       AuthService,
-      MainService
+      MainService,
+      UserDataService
    ],
    bootstrap: [AppComponent]
 })
