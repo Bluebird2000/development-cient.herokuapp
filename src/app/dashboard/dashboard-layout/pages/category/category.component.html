@@ -9,6 +9,8 @@
 </div>
 </div>
 
+<button id="myBtn" routerLink="/category/add" title="Add Category"><i class="fa fa-plus fa-1.5"></i></button>
+
 <div class="text-center" *ngIf="categories && (categories.length === 0)">
   <div class="loading-tab">
       <i class="fa fa-frown-o fa-2x text-secondary"></i><br />
@@ -17,7 +19,7 @@
 </div>
 <div class="text-center" *ngIf="!(categories)">
   <ngb-progressbar type="info" [value]="fetchForumProgress" [striped]="true" [animated]="true">
-    creating {{fetchForumProgress}}%
+    loading {{fetchForumProgress}}%
 </ngb-progressbar>
 </div>
 <div *ngIf="categories && categories.length" class="table-responsive" id="local_data">

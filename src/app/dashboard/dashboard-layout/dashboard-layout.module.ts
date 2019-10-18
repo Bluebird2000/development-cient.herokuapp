@@ -12,9 +12,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CategoryComponent } from './pages/category/category.component';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
+import { modals } from './pages/modals';
 
 
 @NgModule({
+  entryComponents: [...modals],
   declarations: [
     AdminComponent,
     UsersComponent,
@@ -22,7 +24,8 @@ import { AddCategoryComponent } from './pages/add-category/add-category.componen
     AddForumComponent,
     ViewForumComponent,
     CategoryComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    ...modals,
   ],
   imports: [
     CommonModule,
