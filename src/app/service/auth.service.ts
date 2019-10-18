@@ -78,4 +78,18 @@ export class AuthService {
   listUsers() {
     return this.http.get<any>(`${this.url}/users`, this.appendAuthHeader());
   }
+
+  listOneUser(id) {
+    return this.http.get<any>(`${this.url}/users/${id}`, this.appendAuthHeader());
+  }
+
+  suspendUser(id) {
+    return this.http.patch<any>(`${this.url}/users/suspend/${id}`, this.appendAuthHeader());
+  }
+
+
+  unsuspendUser(id) {
+    return this.http.patch<any>(`${this.url}/users/unsuspend/${id}`, this.appendAuthHeader());
+  }
+
 }

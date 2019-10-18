@@ -17,7 +17,7 @@
   </div>
   <div class="text-center" *ngIf="!(users)">
       <ngb-progressbar type="info" [value]="fetchUserProgress" [striped]="true" [animated]="true">
-          creating {{fetchUserProgress}}%
+          loading {{fetchUserProgress}}%
       </ngb-progressbar>
   </div>
   <div *ngIf="users && users.length" class="table-responsive" id="local_data">
@@ -41,7 +41,7 @@
       </thead>
       <tbody>
       <tr *ngFor="let user of users">
-        <td class="text-center"><a [routerLink]="['/users', user._id]">View</a></td>
+        <td class="text-center"><a (click)="viewUSer(user)">View</a></td>
         <td scope="row">{{user.firstName}}&nbsp;{{user.lastName}}</td>
         <!-- <td><ngb-highlight [result]="user.lastName" [term]="filter.value"></ngb-highlight></td>
         <td><ngb-highlight [result]="user.email" [term]="filter.value"></ngb-highlight></td>

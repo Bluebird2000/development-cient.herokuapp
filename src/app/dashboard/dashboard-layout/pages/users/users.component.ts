@@ -1,5 +1,7 @@
 import { AuthService } from './../../../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
+import { UserDataService } from '../../../../service/user-data.service';
 
 @Component({
   selector: 'app-users',
@@ -12,7 +14,7 @@ export class UsersComponent implements OnInit {
   setTimeProgress;
   fetchUserProgress = 10;
 
-  constructor(private service: AuthService) { }
+  constructor(private service: AuthService, private router: Router, private _data: UserDataService) { }
 
   ngOnInit() {
     this.listUsers();
@@ -29,6 +31,14 @@ export class UsersComponent implements OnInit {
       }
     });
   }
+
+  viewUSer(user) {
+    // this._data.data = {
+    //   user
+    // };
+    this.router.navigate(['/users', user._id]);
+  }
+
 
   userStatus(status) {
     if (status) { return 'Active'; }

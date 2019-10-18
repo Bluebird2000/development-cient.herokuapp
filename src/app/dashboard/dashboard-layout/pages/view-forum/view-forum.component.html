@@ -36,8 +36,8 @@
       <th scope="col" style="min-width: 200px;">Created&nbsp;by</th>
       <th scope="col">Created&nbsp;on</th>
       <th>Action</th>
-      <th scope="col">Comments</th>
-      <th scope="col">Likes</th>
+      <th scope="col" style="width: 50px;">Comments</th>
+      <th scope="col" style="width: 30px;">Likes</th>
     </tr>
     </thead>
     <tbody>
@@ -59,8 +59,8 @@
                 ngbTooltip="Delete forum" id="deleteforum"></i>
             </span>
       </td>
-      <td>{{forum.comments}}</td>
-      <td>{{forum.likes}}</td>
+      <td class="text-center">{{forum.totalCommentCount}}</td>
+      <td class="text-center">{{forum.reactions || 0}}</td>
     </tr>
     </tbody>
   </table>
