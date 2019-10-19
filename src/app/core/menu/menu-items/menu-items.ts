@@ -145,34 +145,29 @@ const FOOTERMENU = [
 const EXPLOREMENU = [
    {
       state: "home",
-      name: "Dashboard",
+      name: "Home",
       type:"link"
    },
    {
-      state: "sign-in",
-      name: "Sign In",
+      state: "forum",
+      name: "Forums",
       type:"link"
    },
    {
-      state: "sign-up",
-      name: "Sign Up",
+      state: "home",
+      name: "Chatroom",
       type:"link"
    },
    {
-      state: "helpdesk",
-      name: "Helpdesk",
+      state: "home",
+      name: "Market Place",
       type:"link"
    },
    {
-      state: "privacy-policy",
-      name: "Privacy Policy",
+      state: "login",
+      name: "Get Started",
       type:"link"
    },
-   {
-      state: "terms-conditions",
-      name: "Terms & Conditions ",
-      type:"link"
-   }
 ];
 
 const FOOTERMENU2 = [
@@ -182,28 +177,23 @@ const FOOTERMENU2 = [
       type:"link"
    },
    {
-      state:"sidebar-widgets",
-      name:"Widgets",
+      state: "forum",
+      name: "Forums",
       type:"link"
    },
    {
-      state:"about",
-      name:"About",
+      state: "home",
+      name: "Chatroom",
       type:"link"
    },
    {
-      state:"contact",
-      name:"Contact",
+      state: "home",
+      name: "Market Place",
       type:"link"
    },
    {
-      state:"features",
-      name:"Features",
-      type:"link"
-   },
-   {
-      state:"support",
-      name:"Support",
+      state: "login",
+      name: "Get Started",
       type:"link"
    },
 ];

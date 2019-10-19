@@ -36,6 +36,8 @@ import { Footer2Component } from './footer2/footer2.component';
 import { sidebarWidgetsComponent } from './sidebarWidgets/sidebarWidgets.component';
 import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard-layout.component';
 import { ComponentsModule } from './dashboard/dashboard-layout/components/components.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { UserDataService } from './service/user-data.service';
 
 @NgModule({
    declarations: [
@@ -64,6 +66,7 @@ import { ComponentsModule } from './dashboard/dashboard-layout/components/compon
       ComponentsModule,
       WidgetsModule,
       MenuToggleModule,
+      NgbModule,
       DirectivesModule,
       SlickModule.forRoot(),
       AgmCoreModule.forRoot({
@@ -75,7 +78,8 @@ import { ComponentsModule } from './dashboard/dashboard-layout/components/compon
       PageTitleService,
       ChkService,
       AuthService,
-      MainService
+      MainService,
+      UserDataService
    ],
    bootstrap: [AppComponent]
 })

@@ -11,6 +11,7 @@ export const ROUTES: RouteInfo[] = [
   { path: '/dashboard', title: 'Dashboard', icon: 'ion-ios-home', class: '' },
   { path: '/users', title: 'Users', icon: 'ion-ios-person', class: ''},
   { path: '/forums', title: 'Forums', icon: 'ion-ios-mail', class: ''},
+  { path: '/category', title: 'Category', icon: 'ion-ios-mail', class: ''},
   { path: '/messages', title: 'Messages', icon: 'ion-ios-mail', class: ''},
   { path: '/market-place', title: 'Market Place', icon: 'ion-ios-mail', class: ''},
   { path: '/settings', title: 'Settings', icon: 'ion-ios-settings', class: ''},

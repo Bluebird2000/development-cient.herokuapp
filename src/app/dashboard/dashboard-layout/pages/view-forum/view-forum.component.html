@@ -1,0 +1,67 @@
+<div *ngIf="forums" class="admin-header">
+  <div class="form-group form-inline">
+      Sort by <input class="form-control ml-2" type="text" name="searchTerm" />
+  </div>
+<div class="header__search__banner">
+  <div class="search__icon">
+    <i class="fa fa-search"></i>
+  </div>
+</div>
+</div>
+
+<button id="myBtn" routerLink="/forums/add" title="Add Forum"><i class="fa fa-plus fa-1.5"></i></button>
+
+<div class="text-center" *ngIf="forums && (forums.length === 0)">
+  <div class="loading-tab">
+      <i class="fa fa-frown-o fa-2x text-secondary"></i><br />
+      <h5 id="no-inflow-cat">No forums Yet</h5>
+  </div>
+</div>
+<div class="text-center" *ngIf="!(forums)">
+  <ngb-progressbar type="info" [value]="fetchForumProgress" [striped]="true" [animated]="true">
+    loading {{fetchForumProgress}}%
+</ngb-progressbar>
+</div>
+<div *ngIf="forums && forums.length" class="table-responsive" id="local_data">
+  <!-- <form>
+    <div class="form-group form-inline">
+        Full text search: <input class="form-control ml-2" type="text" [formControl]="filter"/>
+    </div>
+  </form> -->
+
+  <table class="table table-responsive">
+    <thead>
+    <tr>
+      <th scope="col">Forum Title</th>
+      <th scope="col" style="min-width: 200px;">Created&nbsp;by</th>
+      <th scope="col">Created&nbsp;on</th>
+      <th>Action</th>
+      <th scope="col" style="width: 50px;">Comments</th>
+      <th scope="col" style="width: 30px;">Likes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let forum of forums">
+      <td scope="row">&nbsp;&nbsp;{{forum.topic}}</td>
+      <!-- <td><ngb-highlight [result]="forum.lastName" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="forum.email" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="forum.role" [term]="filter.value"></ngb-highlight></td>
+      <td><ngb-highlight [result]="forum.createdAt | date" [term]="filter.value"></ngb-highlight></td> -->
+      <td>{{forum.userId}}</td>
+      <td>{{forum.createdAt | date: 'dd-mm-yyyy'}}</td>
+      <td>
+          <span class="action-span">
+              <i class="icon fa fa-pencil fa-1.5x text-info"
+                placement="auto" ngbTooltip="Edit forum" id="editforum"></i>
+
+              <i style="margin-left: 20px;" (click)="openDeleteModal(forum)"
+                class="icon fa fa-trash fa-1.5x text-danger" placement="auto"
+                ngbTooltip="Delete forum" id="deleteforum"></i>
+            </span>
+      </td>
+      <td class="text-center">{{forum.totalCommentCount}}</td>
+      <td class="text-center">{{forum.reactions || 0}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

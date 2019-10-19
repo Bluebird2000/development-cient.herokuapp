@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.form-control {
+  border: 2px solid #51bbfa;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px
+}
+
+i.fa-search {
+  padding: 10px;
+  color: #101596;
+  font-size: 20px;
+  background-color: #eee;
+}
+
+.text-info {
+  color: #3ACC6C !important;
+}
+
+.text-danger {
+  color:  #F41313 !important;
+}
+
+.table tbody>tr>td>a {
+  padding: 10px;
+  color: #51bbfa;
+  border: 2px solid #eee;
+}
+
+.table tbody>tr>td>a:hover {
+  border: 2px solid #51bbfa;
+}
+
+::ng-deep .progress-bar {
+  background-color: #51bbfe !important;
+}
+
+.active {
+  color: #fff;
+  width: 60%;
+  background-color: #51bbfe;
+  text-align: center;
+  padding: 3px;
+}
+
+.inactive {
+  color: #fff;
+  width: 50%;
+  background-color: #F3DBE4;
+  text-align: center;
+  padding: 3px;
+}
+/* .table {
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  border: none;
+} */
+/* .table td{
+  outline: none;
+  border: none;
+  background: #fff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+} */

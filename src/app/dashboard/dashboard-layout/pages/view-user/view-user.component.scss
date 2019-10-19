@@ -269,3 +269,16 @@ color: #000000;
   color: #51BBFE;
 }
 }
+
+::ng-deep .progress-bar {
+  background-color: #51bbfe !important;
+}
+
+.alert-danger {
+  background-color: #d81159 !important;
+}
+
+
+.events {
+  padding: 5px 30%;
+}

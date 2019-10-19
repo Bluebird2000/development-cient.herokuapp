@@ -1,5 +1,37 @@
+.no__gap {
+    padding-top: 0 !important;
+}
+.forum__header__main {
+    background: #f4f4f4;
+}
+.header__padding {
+    display: flex;
+    padding: .5rem;
+    align-items: center;
+
+}
+.search__keyword {
+    flex: 8;
+}
+.action__button {
+    flex-direction: row;
+    flex: 4;
+    background: blue;
+    align-items: center;
+}
+.action__button ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile__action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .forum__questions__gap {
-    background-color: #E5E5E5;
+    background-color: #f7f7f7;
     padding: 5%;
 } 
 .profile-img-responsive {
