@@ -1,3 +1,4 @@
+import { AuthService } from './../../../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 export interface RouteInfo {
@@ -26,9 +27,32 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   public menuItems: any[];
-  constructor() { }
+  isAdmin: boolean;
+  allMenus = [
+    { path: '/dashboard', title: 'Dashboard', icon: 'ion-ios-home', class: '' },
+    this.userMenu(),
+    { title: 'Forums', path: '/forums', icon: 'ion-ios-mail', class: ''},
+    { title: 'Category', path: '/category', icon: 'ion-ios-mail', class: ''},
+    { title: 'Messages', path: '/messages', icon: 'ion-ios-mail', class: ''},
+    { title: 'Market Place', path: '/market-place', icon: 'ion-ios-mail', class: ''},
+    { title: 'Settings', path: '/settings', icon: 'ion-ios-settings', class: ''},
+    { title: 'Notifications', path: '/notifications', icon: 'ion-ios-mail', class: ''},
+    { title: 'Log Out', path: '/log-out', icon: 'ion-ios-mail', class: ''},
+  ];
+  constructor(private authService: AuthService) { }
+
+  userMenu() {
+    if (this.authService.isAdmin) {
+      return {
+        title: 'Users', path: '/users', icon: 'ion-ios-person', class: '',
+      };
+    }
+  }
 
   ngOnInit() {
+    if (this.authService.isAdmin) {
+      this.isAdmin = true;
+    }
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
 

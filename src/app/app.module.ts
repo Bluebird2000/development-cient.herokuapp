@@ -1,3 +1,4 @@
+import { AccessDeniedComponent } from './core/access-denied.component';
 import { MainService } from './service/main-service.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -38,6 +39,7 @@ import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard
 import { ComponentsModule } from './dashboard/dashboard-layout/components/components.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { UserDataService } from './service/user-data.service';
+import { ViewTopicComponent } from './forum/view-topic/view-topic.component';
 
 @NgModule({
    declarations: [
@@ -55,6 +57,8 @@ import { UserDataService } from './service/user-data.service';
       Footer2Component,
       sidebarWidgetsComponent,
       DashboardLayoutComponent,
+      ViewTopicComponent,
+      AccessDeniedComponent
    ],
    imports: [
       BrowserModule,

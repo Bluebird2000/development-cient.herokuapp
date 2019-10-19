@@ -72,8 +72,8 @@ export class AddForumComponent implements OnInit {
           this.addingForum = 10;
           clearInterval(this.setTimeProgress);
           setTimeout(() => this.error = false, 5000);
-          console.log(error);
-          this.errorMessage = error;
+          console.log(error.error.data[0].constraints);
+          this.errorMessage = error.error.data[0].constraints.unique;
           this.getDisableBtn(false);
           this.loading = false;
         }
