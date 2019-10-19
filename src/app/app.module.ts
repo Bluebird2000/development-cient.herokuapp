@@ -40,6 +40,7 @@ import { ComponentsModule } from './dashboard/dashboard-layout/components/compon
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { UserDataService } from './service/user-data.service';
 import { ViewTopicComponent } from './forum/view-topic/view-topic.component';
+import { ForumHeaderComponent } from './forum/forum-header/forum-header.component';
 
 @NgModule({
    declarations: [
@@ -58,7 +59,8 @@ import { ViewTopicComponent } from './forum/view-topic/view-topic.component';
       sidebarWidgetsComponent,
       DashboardLayoutComponent,
       ViewTopicComponent,
-      AccessDeniedComponent
+      AccessDeniedComponent,
+      ForumHeaderComponent
    ],
    imports: [
       BrowserModule,
