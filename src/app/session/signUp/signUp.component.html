@@ -10,10 +10,11 @@
     <div class="left__side__banner">
       <div class="form__content">
         <h3>Sign Up</h3>
-        <p class="py-1">Enter your details to create an <br> account</p>
+        <p class="py-1">Enter your details to create an account</p>
         <div class="invalid mb-3" role="alert" *ngIf="registerErr">
             <button aria-label="Close" class="close ng-star-inserted" (click)="clearRegisterErr()" type="button"><span aria-hidden="true" style="font-size: 14px; text-align: centre;">×</span></button>{{registerErrorMsg}}
           </div>
+          <!-- <p style="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium expedita quo placeat recusandae molestiae repudiandae hic doloribus alias! Autem similique sit illum quia impedit! Quia dicta quisquam accusantium dolorum quis!</p> -->
         <form [formGroup]="signupForm" (ngSubmit)="register()">
             <div class="input-container">
               <i class="fa fa-user icon"></i>
@@ -60,10 +61,21 @@
               <a routerLink="/login" class="button button-primary-2 mobile">SIGN In</a>
               <button type="submit"  [disabled]="getDisableState" class="sub-btn sub-btn-primary"><i *ngIf="disableBtn" class="fa fa-spinner fa-spin"></i>Sign Up</button>
             </div>
-            <div class="social__media__auth">
-              <a href="#" class="fa fa-facebook"></a>
-              <a href="#" class="fa fa-google"></a>
+            <div class="social-container">
+              <a href="" class="fa-stack fa-lg" style="text-decoration:none; margin-top:0">
+                <i class="fa fa-circle fa-stack-2x icon-background1"></i>
+                <i class="fa  fa-facebook fa-stack-1x  icon-background2"></i>
+              </a>
+              &nbsp;
+              <a href="" class="fa-stack fa-lg" style="text-decoration:none">
+                <i class="fa fa-circle fa-stack-2x icon-background1"></i>
+                <i class="fa fa-google fa-stack-1x  icon-background2"></i>
+              </a>
             </div>
+            <!-- <div class="social__media__auth">
+              <a href="#" class="fa fa-facebook"></a> &nbsp;
+              <a href="#" class="fa fa-google"></a>
+            </div> -->
           </form>
       </div>
     </div>
