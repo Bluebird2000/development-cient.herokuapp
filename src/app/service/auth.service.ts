@@ -92,4 +92,12 @@ export class AuthService {
     return this.http.patch<any>(`${this.url}/users/unsuspend/${id}`, this.appendAuthHeader());
   }
 
+  redirectToAccessDeniedPageWithData() {
+    this.router.navigate(AuthService.accessDeniedRoute);
+  }
+
+  get isAdmin(): boolean {
+      return this.currentUserValue.result.role === 'admin';
+  }
+
 }

@@ -1,3 +1,4 @@
+import { AccessDeniedComponent } from './core/access-denied.component';
 import { MainService } from './service/main-service.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -57,6 +58,7 @@ import { ViewTopicComponent } from './forum/view-topic/view-topic.component';
       sidebarWidgetsComponent,
       DashboardLayoutComponent,
       ViewTopicComponent,
+      AccessDeniedComponent
    ],
    imports: [
       BrowserModule,
