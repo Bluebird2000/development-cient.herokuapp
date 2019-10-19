@@ -30,12 +30,14 @@
         justify-content: center;
 
         & .form__content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 80%;
-            text-align: center;
+              // background: #000000;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              // align-items: center;
+              height: 80%;
+              width: 60%;
+              text-align: center;
 
             @include respond(phone) {
               width: 90%;
@@ -47,7 +49,7 @@
                 margin-bottom: 2rem;
 
                 & .icon {
-                    padding: 10px;
+                    padding: 18px;
                     background: #E8E8F0;
                     color: #000000;
                     min-width: 50px;
@@ -87,6 +89,10 @@
             align-items: center;
             height: 100%;
             text-align: center;
+            & h3 {
+              color: #ffffff;
+              font-weight: bold;
+            }
         }
     }
 }
@@ -95,7 +101,7 @@
 .button {
 
     &:link, &:visited {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         text-transform: uppercase;
         margin-top: 2%;
         padding: 12px 50px;
@@ -128,6 +134,7 @@
         &:hover {
           opacity: 0.9;
           color: #ffffff;
+          border: none;
       }
 
         &::after {
@@ -151,10 +158,10 @@
       color: #000000;
 
       &:hover {
-          background-color: #51BBFE;
-          color: #ffffff;
-          border: none;
-      }
+        background-color: #51BBFE;
+        color: #ffffff;
+        border: none;
+    }
   }
 
     &::after {
@@ -238,3 +245,27 @@
 
 
 
+
+.social-container {
+  font-size: 1.2em
+}
+.icon-background1 {
+  color: #ffffff;
+}
+.icon-background2 {
+  color: #000000;
+  border: 1px solid #999999;
+  border-radius: 50%;
+
+}
+a:hover .icon-background1 {
+  color: #fff;
+  border-radius: 50%;
+  // box-shadow: 0px 0px 5px #000;
+}
+a:hover .icon-background2 {
+  color: #000;
+  border-radius: 50%;
+  // box-shadow: 0px 0px 5px #000;
+  border: 1px solid #999999;
+}
