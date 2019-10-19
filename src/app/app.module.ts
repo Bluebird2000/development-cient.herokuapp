@@ -39,6 +39,7 @@ import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard
 import { ComponentsModule } from './dashboard/dashboard-layout/components/components.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { UserDataService } from './service/user-data.service';
+import { ViewTopicComponent } from './forum/view-topic/view-topic.component';
 
 @NgModule({
    declarations: [
@@ -56,6 +57,7 @@ import { UserDataService } from './service/user-data.service';
       Footer2Component,
       sidebarWidgetsComponent,
       DashboardLayoutComponent,
+      ViewTopicComponent,
       AccessDeniedComponent
    ],
    imports: [
