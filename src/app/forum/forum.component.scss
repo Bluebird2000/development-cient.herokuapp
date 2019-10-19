@@ -166,7 +166,7 @@ button::-moz-focus-inner {
 	color: #fff;
 	font-style: normal;
 	font-size: 28px;
-	font-family: Arial, Baskerville, monospace
+	// font-family: Arial, Baskerville, monospace
 }
 
 .mfp-close:focus,
@@ -446,7 +446,7 @@ screen and (max-height:300px) {
 }
 
 html {
-	font-family: sans-serif;
+	// font-family: sans-serif;
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: transparent
@@ -466,7 +466,7 @@ section {
 }
 
 body {
-	font-family: Krub, sans-serif;
+	// font-family: Krub, sans-serif;
 	font-weight: 400;
 	color: #666f74;
 	text-align: left;
@@ -592,7 +592,7 @@ code,
 kbd,
 pre,
 samp {
-	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	// font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	font-size: 1em
 }
 
@@ -5039,7 +5039,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .form-default .form-control {
-	font-family: Krub, sans-serif;
+	// font-family: Krub, sans-serif;
 	background: #e2e7ea;
 	color: #666f74;
 	font-size: 16px;
@@ -7112,7 +7112,7 @@ hr {
 	-ms-flex-align: center;
 	align-items: center;
 	position: relative;
-	min-height: 101px;
+	min-height: 50px;
 	padding: 20px 15px
 }
 
@@ -7204,7 +7204,10 @@ hr {
 .tt-topic-list .tt-item .tt-col-description .tt-title a {
 	color: #303344;
 	-webkit-transition: color .2s linear;
-	transition: color .2s linear
+    transition: color .2s linear;
+    text-transform: lowercase;
+    //@Bluebird2000
+    font-size: 16px;
 }
 
 .tt-topic-list .tt-item .tt-col-description .tt-title a:hover {
