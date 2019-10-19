@@ -7480,7 +7480,12 @@ hr {
 }
 
 .tt-single-topic {
-	position: relative
+	position: relative;
+}
+
+.tt-single-topic-comment {
+	background-color: #E8E8F0;
+	border-radius: 15px;
 }
 
 .tt-single-topic .tt-item-header .tt-item-info.info-top {
