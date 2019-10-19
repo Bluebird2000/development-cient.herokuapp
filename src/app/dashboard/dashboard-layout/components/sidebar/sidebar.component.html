@@ -10,11 +10,65 @@
     </a> -->
   <!-- </div> -->
     <ul class="nav pt-5">
-        <li *ngFor="let menuItem of allMenus" routerLinkActive="active" class="{{menuItem.class}}">
-            <a [routerLink]="[menuItem.path]">
-                <i class="{{menuItem.icon}}"></i>
-                <p>{{menuItem.title}}</p>
+        <li routerLinkActive="active">
+            <a routerLink="/dashboard">
+                <i class="ion-ios-home"></i>
+                <p>Dashboard</p>
             </a>
         </li>
+        <li  *ngIf="isAdmin" routerLinkActive="active">
+          <a routerLink="/users">
+              <i class="ion-ios-person"></i>
+              <p>Users<p>
+          </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/forums">
+            <i class="ion-ios-mail"></i>
+            <p>Forum</p>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/category">
+            <i class="ion-ios-mail"></i>
+            <p>Category</p>
+        </a>
+      </li>
+      <li *ngIf="isAdmin" routerLinkActive="active">
+        <a routerLink="/category">
+            <i class="ion-ios-mail"></i>
+            <p>Category</p>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/messages">
+            <i class="ion-ios-mail"></i>
+            <p>Messages</p>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/market-place">
+            <i class="ion-ios-mail"></i>
+            <p>Market Place</p>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/settings">
+            <i class="ion-ios-mail"></i>
+            <p>Settings</p>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/notifications">
+            <i class="ion-ios-mail"></i>
+            <p>Notifications</p>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/log-out">
+            <i class="ion-ios-mail"></i>
+            <p>Log Out</p>
+        </a>
+      </li>
     </ul>
 </div>
