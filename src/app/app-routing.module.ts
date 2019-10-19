@@ -11,6 +11,7 @@ import { ForumComponent } from './forum/forum.component';
 import { SearchComponent } from './search/search.component';
 import { SupportComponent } from './support/support.component';
 import { sidebarWidgetsComponent } from './sidebarWidgets/sidebarWidgets.component';
+import { ViewTopicComponent } from './forum/view-topic/view-topic.component';
 
 export const AppRoutes: Routes = [{
    path: '',
@@ -24,6 +25,9 @@ export const AppRoutes: Routes = [{
    {
       path: 'forum',
       component: ForumComponent
+   }, {
+      path:'forum/view-topic',
+      component: ViewTopicComponent
    },
    
    {
