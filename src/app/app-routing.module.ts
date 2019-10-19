@@ -1,3 +1,4 @@
+import { AuthGuard } from './core/guard/auth.guard';
 import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard-layout.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,6 +12,7 @@ import { ForumComponent } from './forum/forum.component';
 import { SearchComponent } from './search/search.component';
 import { SupportComponent } from './support/support.component';
 import { sidebarWidgetsComponent } from './sidebarWidgets/sidebarWidgets.component';
+import { AccessDeniedComponent } from './core/access-denied.component';
 
 export const AppRoutes: Routes = [{
    path: '',
@@ -25,7 +27,7 @@ export const AppRoutes: Routes = [{
       path: 'forum',
       component: ForumComponent
    },
-   
+
    {
       path: '',
       component: MainComponent,
@@ -82,8 +84,16 @@ export const AppRoutes: Routes = [{
       component: DashboardLayoutComponent,
       children: [
          {
+            path: 'access-denied',
+            component: AccessDeniedComponent,
+            data: {
+              heading: 'Unauthorized Access'
+            },
+          },
+         {
             path: '',
-            loadChildren: './dashboard/dashboard-layout/dashboard-layout.module#DashboardLayoutModule'
+            loadChildren: './dashboard/dashboard-layout/dashboard-layout.module#DashboardLayoutModule',
+            canActivate: [AuthGuard]
          }
       ]
    },

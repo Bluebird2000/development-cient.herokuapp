@@ -1,3 +1,4 @@
+import { AccessDeniedComponent } from './core/access-denied.component';
 import { MainService } from './service/main-service.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -55,6 +56,7 @@ import { UserDataService } from './service/user-data.service';
       Footer2Component,
       sidebarWidgetsComponent,
       DashboardLayoutComponent,
+      AccessDeniedComponent
    ],
    imports: [
       BrowserModule,
