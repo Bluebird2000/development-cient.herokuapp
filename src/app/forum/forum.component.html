@@ -1,5 +1,16 @@
 <app-forum-header></app-forum-header>
-<main id="tt-pageContent" class="tt-offset-small">
+<div class="text-center" *ngIf="!(forums)">
+    <ngb-progressbar type="info" [value]="fetchForumProgress" [striped]="true" [animated]="true">
+        loading {{fetchForumProgress}}%
+    </ngb-progressbar>
+</div>
+<div class="text-center" *ngIf="forums && (forums.length === 0)">
+    <div class="loading-tab">
+        <i class="fa fa-frown-o fa-2x text-secondary"></i><br />
+        <h5 id="no-inflow-cat">No forums Yet</h5>
+    </div>
+</div>
+<main *ngIf="forums && forums.length" id="tt-pageContent" class="tt-offset-small">
       <div class="container">
           <div class="tt-topic-list">
               <div class="tt-list-header">
@@ -13,7 +24,26 @@
               <div class="tt-topic-alert tt-alert-default" role="alert">
                 <a href="#" target="_blank">4 new posts</a> are added recently, click here to load them.
               </div>
-              <div class="tt-item">
+              <div *ngFor="let forum of forums" class="tt-item">
+                  <div class="tt-col-avatar">
+                     <svg class="tt-icon">
+                        <use xlink:href="#icon-ava-t"></use>
+                      </svg>
+                  </div>
+                  <div class="tt-col-description">
+                      <h6 class="tt-title"><a href="page-single-topic.html">
+                            {{forum.topic}}
+                      </a></h6>
+                      <!-- -->
+                  </div>
+                  <div class="tt-col-category"><span class="tt-color07 tt-badge">{{forum.category.name}}</span></div>
+                  <div class="tt-col-value hide-mobile">{{forum.reactions || 0}}</div>
+                  <div class="tt-col-value tt-color-select  hide-mobile">{{forum.totalCommentCount}}</div>
+                  <div class="tt-col-value  hide-mobile">5k</div>
+                  <div class="tt-col-value hide-mobile">2h</div>
+              </div>
+
+              <!-- <div class="tt-item">
                   <div class="tt-col-avatar">
                      <svg class="tt-icon">
                         <use xlink:href="#icon-ava-t"></use>
@@ -23,7 +53,6 @@
                       <h6 class="tt-title"><a href="page-single-topic.html">
                           A wonderful serenity has taken possession of my ...
                       </a></h6>
-                      <!-- -->
                   </div>
                   <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
                   <div class="tt-col-value hide-mobile">364</div>
@@ -42,7 +71,6 @@
                       <h6 class="tt-title"><a href="page-single-topic.html">
                           A wonderful serenity has taken possession of my ...
                       </a></h6>
-                      <!-- -->
                   </div>
                   <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
                   <div class="tt-col-value hide-mobile">364</div>
@@ -61,7 +89,6 @@
                       <h6 class="tt-title"><a href="page-single-topic.html">
                           A wonderful serenity has taken possession of my ...
                       </a></h6>
-                      <!-- -->
                   </div>
                   <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
                   <div class="tt-col-value hide-mobile">364</div>
@@ -80,7 +107,6 @@
                       <h6 class="tt-title"><a href="page-single-topic.html">
                           A wonderful serenity has taken possession of my ...
                       </a></h6>
-                      <!-- -->
                   </div>
                   <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
                   <div class="tt-col-value hide-mobile">364</div>
@@ -99,33 +125,13 @@
                       <h6 class="tt-title"><a href="page-single-topic.html">
                           A wonderful serenity has taken possession of my ...
                       </a></h6>
-                      <!-- -->
                   </div>
                   <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
                   <div class="tt-col-value hide-mobile">364</div>
                   <div class="tt-col-value tt-color-select  hide-mobile">36</div>
                   <div class="tt-col-value  hide-mobile">982</div>
                   <div class="tt-col-value hide-mobile">2d</div>
-              </div>
-
-              <div class="tt-item">
-                  <div class="tt-col-avatar">
-                     <svg class="tt-icon">
-                        <use xlink:href="#icon-ava-t"></use>
-                      </svg>
-                  </div>
-                  <div class="tt-col-description">
-                      <h6 class="tt-title"><a href="page-single-topic.html">
-                          A wonderful serenity has taken possession of my ...
-                      </a></h6>
-                      <!-- -->
-                  </div>
-                  <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
-                  <div class="tt-col-value hide-mobile">364</div>
-                  <div class="tt-col-value tt-color-select  hide-mobile">36</div>
-                  <div class="tt-col-value  hide-mobile">982</div>
-                  <div class="tt-col-value hide-mobile">2d</div>
-              </div>
+              </div> -->
               
               <div class="tt-row-btn">
                   <button type="button" class="btn-icon js-topiclist-showmore">
