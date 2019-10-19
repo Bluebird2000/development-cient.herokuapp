@@ -14,7 +14,6 @@
         <div class="invalid mb-3" role="alert" *ngIf="registerErr">
             <button aria-label="Close" class="close ng-star-inserted" (click)="clearRegisterErr()" type="button"><span aria-hidden="true" style="font-size: 14px; text-align: centre;">×</span></button>{{registerErrorMsg}}
           </div>
-          <!-- <p style="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium expedita quo placeat recusandae molestiae repudiandae hic doloribus alias! Autem similique sit illum quia impedit! Quia dicta quisquam accusantium dolorum quis!</p> -->
         <form [formGroup]="signupForm" (ngSubmit)="register()">
             <div class="input-container">
               <i class="fa fa-user icon"></i>
@@ -72,10 +71,6 @@
                 <i class="fa fa-google fa-stack-1x  icon-background2"></i>
               </a>
             </div>
-            <!-- <div class="social__media__auth">
-              <a href="#" class="fa fa-facebook"></a> &nbsp;
-              <a href="#" class="fa fa-google"></a>
-            </div> -->
           </form>
       </div>
     </div>
