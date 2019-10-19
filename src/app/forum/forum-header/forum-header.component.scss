@@ -7,9 +7,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
  */
- ::ng-deep .progress-bar {
-  background-color: #51bbfe !important;
-}
 
 .mfp-bg {
 	top: 0;
@@ -7483,12 +7480,7 @@ hr {
 }
 
 .tt-single-topic {
-	position: relative;
-}
-
-.tt-single-topic-comment {
-	background-color: #E8E8F0;
-	border-radius: 15px;
+	position: relative
 }
 
 .tt-single-topic .tt-item-header .tt-item-info.info-top {
