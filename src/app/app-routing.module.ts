@@ -28,7 +28,7 @@ export const AppRoutes: Routes = [{
       path: 'forum',
       component: ForumComponent
    }, {
-      path:'forum/view-topic',
+      path: 'forum/view-topic',
       component: ViewTopicComponent
    },
 

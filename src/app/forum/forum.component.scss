@@ -8,6 +8,10 @@
  * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
  */
 
+::ng-deep .progress-bar {
+	background-color: #51bbfe !important;
+}
+
 .mfp-bg {
 	top: 0;
 	left: 0;
