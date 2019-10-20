@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PageTitleService } from '../core/page-title/page-title.service';
 import { ChkService } from '../service/chk.service';
 import { MainService } from '../service/main-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'angly-about',
@@ -19,7 +20,11 @@ export class ForumComponent implements OnInit {
    setTimeProgress;
    fetchForumProgress = 10;
 
-   constructor(private pageTitleService: PageTitleService, private service: ChkService, private mainSrv: MainService) {
+   constructor(
+     private pageTitleService: PageTitleService,
+     private service: ChkService,
+     private mainSrv: MainService,
+     private router: Router) {
 
       /* Page title */
       this.pageTitleService.setTitle(' Know More About Us');
@@ -56,6 +61,10 @@ export class ForumComponent implements OnInit {
 
    ngOnInit() {
       this.viewForums();
+   }
+
+   viewForum(forum) {
+     this.router.navigate(['/forum/view-topic', forum._id]);
    }
 
    viewForums() {

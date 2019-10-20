@@ -1,4 +1,9 @@
 <app-forum-header></app-forum-header>
+<div class="text-center" *ngIf="!(forumData)">
+    <ngb-progressbar type="info" [value]="fetchForumProgress" [striped]="true" [animated]="true">
+        loading {{fetchForumProgress}}%
+    </ngb-progressbar>
+</div>
 <main id="tt-pageContent">
     <div class="container">
         <div class="tt-single-topic-list">

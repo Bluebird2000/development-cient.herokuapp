@@ -29,6 +29,10 @@ export class MainService {
     return this.http.get<any>(`${this.url}/topic`, this.appendAuthHeader());
   }
 
+  listOneForum(id) {
+    return this.http.get<any>(`${this.url}/topic/${id}`, this.appendAuthHeader());
+  }
+
   deleteForum(id) {
     return this.http.delete<any>(`${this.url}/topic/${id}`, this.appendAuthHeader());
   }
