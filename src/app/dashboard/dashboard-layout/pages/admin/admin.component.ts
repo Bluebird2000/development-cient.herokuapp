@@ -22,6 +22,7 @@ export class AdminComponent implements OnInit {
   }
 
   listUsers() {
+    this.fetchingForumProgress();
     this.authSrv.listUsers().subscribe((data: any) => {
       if (data) {
         this.users = data.data.length;
@@ -31,7 +32,6 @@ export class AdminComponent implements OnInit {
   }
 
   viewForums() {
-    this.fetchingForumProgress();
     this.mainSrv.listForums().subscribe((data: any) => {
       if (data) {
         this.forums = data.data.length;
