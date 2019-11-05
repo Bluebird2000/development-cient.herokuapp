@@ -11,7 +11,7 @@
     </div>
 </div>
 
-  <main id="tt-pageContent" class="tt-offset-small margin__top">
+  <main id="tt-pageContent" *ngIf="forums" class="tt-offset-small margin__top">
         <div class="container">
             <div class="main__section">
                 <div class="row background">
@@ -36,22 +36,22 @@
         <div class="mt__margin__top"></div>
         
             <div class="container__wrapper__left">
-                <div class="row margin__bottom">
+                <div class="row margin__bottom" *ngFor="let forum of forums">
                     <div class="col-md-8">
                         <div class="row bottom__color">
                             <div class="col-md-4">
                                 <img src="assets/asset/home-banner.jpg" alt="forum image" class="fr-img-responsive">
                             </div>
                             <div class="col-md-8">
-                                <h5 class="heading__section">We Ain’t Got No Podcast — Episode 14: Should Chelsea buy in January?</h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos placeat iusto, saepe sunt maxime pariatur voluptates mollitia... <br /> 
-                                  <span class="created__by">By &mdash; Bluebird2000 | November 4 | 10  comments </span></p>
+                                <h5 class="heading__section">{{forum.topic}}</h5>
+                                <p>{{(forum.topic.length>30)?(forum.topic | slice:0:30)+'...':(forum.topic)}}<br /> 
+                                  <span class="created__by">By &mdash; {{forum.userId}} | {{forum.createdAt | date}} | {{forum.totalCommentCount}}  comments </span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--  -->
-                <div class="row margin__bottom">
+                <!-- <div class="row margin__bottom">
                       <div class="col-md-8">
                           <div class="row bottom__color">
                               <div class="col-md-4">
@@ -64,9 +64,9 @@
                               </div>
                           </div>
                       </div>
-                  </div>
+                  </div> -->
                   <!--  -->
-                <div class="row margin__bottom">
+                <!-- <div class="row margin__bottom">
                     <div class="col-md-8">
                         <div class="row bottom__color">
                             <div class="col-md-4">
@@ -79,8 +79,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row margin__bottom">
+                </div> -->
+                <!-- <div class="row margin__bottom">
                     <div class="col-md-8">
                         <div class="row bottom__color">
                             <div class="col-md-4">
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>
