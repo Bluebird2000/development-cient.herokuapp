@@ -26,8 +26,6 @@ export class MainService {
   }
 
   listForums() {
-    console.log('ahmad');
-    
     return this.http.get<any>(`${this.url}/topic`, this.appendAuthHeader());
   }
 
