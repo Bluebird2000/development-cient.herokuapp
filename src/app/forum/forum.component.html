@@ -10,136 +10,90 @@
         <h5 id="no-inflow-cat">No forums Yet</h5>
     </div>
 </div>
-<main *ngIf="forums && forums.length" id="tt-pageContent" class="tt-offset-small">
-      <div class="container">
-          <div class="tt-topic-list">
-              <div class="tt-list-header">
-                  <div class="tt-col-topic">Topic</div>
-                  <div class="tt-col-category">Category</div>
-                  <div class="tt-col-value hide-mobile">Likes</div>
-                  <div class="tt-col-value hide-mobile">Comments</div>
-                  <div class="tt-col-value hide-mobile">Views</div>
-                  <div class="tt-col-value">Activity</div>
-              </div>
-              <div class="tt-topic-alert tt-alert-default" role="alert">
-                <a href="#" target="_blank">4 new posts</a> are added recently, click here to load them.
-              </div>
-              <div *ngFor="let forum of forums" class="tt-item">
-                  <div class="tt-col-avatar">
-                     <svg class="tt-icon">
-                        <use xlink:href="#icon-ava-t"></use>
-                      </svg>
-                  </div>
-                  <div class="tt-col-description">
-                      <h6 class="tt-title"><a href="page-single-topic.html">
-                            {{forum.topic}}
-                      </a></h6>
-                      <!-- -->
-                  </div>
-                  <div class="tt-col-category"><span class="tt-color07 tt-badge">{{forum.category.name}}</span></div>
-                  <div class="tt-col-value hide-mobile">{{forum.reactions || 0}}</div>
-                  <div class="tt-col-value tt-color-select  hide-mobile">{{forum.totalCommentCount}}</div>
-                  <div class="tt-col-value  hide-mobile">5k</div>
-                  <div class="tt-col-value hide-mobile">2h</div>
-              </div>
 
-              <!-- <div class="tt-item">
-                  <div class="tt-col-avatar">
-                     <svg class="tt-icon">
-                        <use xlink:href="#icon-ava-t"></use>
-                      </svg>
+  <main id="tt-pageContent" class="tt-offset-small margin__top">
+        <div class="container">
+            <div class="main__section">
+                <div class="row background">
+                    <div class="col-md-6">
+                        <img src="assets/asset/baby2.jpg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda possimus doloremque, iste soluta quibusdam, illum quo accusamus dolorem reiciendis delectus rem ipsum commodi, iure aut. Nesciunt fuga molestias magnam repudiandae?</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                            <img src="assets/asset/home-banner.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur ad</p>
+                            </div>
+                            <div class="col-md-6">
+                            <img src="assets/asset/home-banner.jpg" alt="">
+                                <p>Lorem, ipsum dolor sit amet consectetur adip</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="mt__margin__top"></div>
+        
+            <div class="container__wrapper__left">
+                <div class="row margin__bottom">
+                    <div class="col-md-8">
+                        <div class="row bottom__color">
+                            <div class="col-md-4">
+                                <img src="assets/asset/home-banner.jpg" alt="forum image" class="fr-img-responsive">
+                            </div>
+                            <div class="col-md-8">
+                                <h5 class="heading__section">We Ain’t Got No Podcast — Episode 14: Should Chelsea buy in January?</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos placeat iusto, saepe sunt maxime pariatur voluptates mollitia... <br /> 
+                                  <span class="created__by">By &mdash; Bluebird2000 | November 4 | 10  comments </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="row margin__bottom">
+                      <div class="col-md-8">
+                          <div class="row bottom__color">
+                              <div class="col-md-4">
+                                  <img src="assets/img/feature-mockup.png" alt="forum image" class="fr-img-responsive">
+                              </div>
+                              <div class="col-md-8">
+                                  <h5 class="heading__section">We Ain’t Got No Podcast — Episode 14: Should Chelsea buy in January?</h5>
+                                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos placeat iusto, saepe sunt maxime pariatur voluptates mollitia... <br /> 
+                                    <span class="created__by">By &mdash; Bluebird2000 | November 4 | 10  comments </span></p>
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                  <div class="tt-col-description">
-                      <h6 class="tt-title"><a href="page-single-topic.html">
-                          A wonderful serenity has taken possession of my ...
-                      </a></h6>
-                  </div>
-                  <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
-                  <div class="tt-col-value hide-mobile">364</div>
-                  <div class="tt-col-value tt-color-select  hide-mobile">36</div>
-                  <div class="tt-col-value  hide-mobile">982</div>
-                  <div class="tt-col-value hide-mobile">2d</div>
-              </div>
-
-              <div class="tt-item">
-                  <div class="tt-col-avatar">
-                     <svg class="tt-icon">
-                        <use xlink:href="#icon-ava-t"></use>
-                      </svg>
-                  </div>
-                  <div class="tt-col-description">
-                      <h6 class="tt-title"><a href="page-single-topic.html">
-                          A wonderful serenity has taken possession of my ...
-                      </a></h6>
-                  </div>
-                  <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
-                  <div class="tt-col-value hide-mobile">364</div>
-                  <div class="tt-col-value tt-color-select  hide-mobile">36</div>
-                  <div class="tt-col-value  hide-mobile">982</div>
-                  <div class="tt-col-value hide-mobile">2d</div>
-              </div>
-
-              <div class="tt-item">
-                  <div class="tt-col-avatar">
-                     <svg class="tt-icon">
-                        <use xlink:href="#icon-ava-t"></use>
-                      </svg>
-                  </div>
-                  <div class="tt-col-description">
-                      <h6 class="tt-title"><a href="page-single-topic.html">
-                          A wonderful serenity has taken possession of my ...
-                      </a></h6>
-                  </div>
-                  <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
-                  <div class="tt-col-value hide-mobile">364</div>
-                  <div class="tt-col-value tt-color-select  hide-mobile">36</div>
-                  <div class="tt-col-value  hide-mobile">982</div>
-                  <div class="tt-col-value hide-mobile">2d</div>
-              </div>
-
-              <div class="tt-item">
-                  <div class="tt-col-avatar">
-                     <svg class="tt-icon">
-                        <use xlink:href="#icon-ava-t"></use>
-                      </svg>
-                  </div>
-                  <div class="tt-col-description">
-                      <h6 class="tt-title"><a href="page-single-topic.html">
-                          A wonderful serenity has taken possession of my ...
-                      </a></h6>
-                  </div>
-                  <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
-                  <div class="tt-col-value hide-mobile">364</div>
-                  <div class="tt-col-value tt-color-select  hide-mobile">36</div>
-                  <div class="tt-col-value  hide-mobile">982</div>
-                  <div class="tt-col-value hide-mobile">2d</div>
-              </div>
-
-              <div class="tt-item">
-                  <div class="tt-col-avatar">
-                     <svg class="tt-icon">
-                        <use xlink:href="#icon-ava-t"></use>
-                      </svg>
-                  </div>
-                  <div class="tt-col-description">
-                      <h6 class="tt-title"><a href="page-single-topic.html">
-                          A wonderful serenity has taken possession of my ...
-                      </a></h6>
-                  </div>
-                  <div class="tt-col-category"><span class="tt-color07 tt-badge">Health</span></div>
-                  <div class="tt-col-value hide-mobile">364</div>
-                  <div class="tt-col-value tt-color-select  hide-mobile">36</div>
-                  <div class="tt-col-value  hide-mobile">982</div>
-                  <div class="tt-col-value hide-mobile">2d</div>
-              </div> -->
-              
-              <div class="tt-row-btn">
-                  <button type="button" class="btn-icon js-topiclist-showmore">
-                      <svg class="tt-icon">
-                        <use xlink:href="#icon-load_lore_icon"></use>
-                      </svg>
-                  </button>
-              </div>
-          </div>
-      </div>
-  </main>
+                  <!--  -->
+                <div class="row margin__bottom">
+                    <div class="col-md-8">
+                        <div class="row bottom__color">
+                            <div class="col-md-4">
+                                <img src="assets/asset/home-banner.jpg" alt="forum image" class="fr-img-responsive">
+                            </div>
+                            <div class="col-md-8">
+                                <h5 class="heading__section">We Ain’t Got No Podcast — Episode 14: Should Chelsea buy in January?</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos placeat iusto, saepe sunt maxime pariatur voluptates mollitia... <br /> 
+                                    <span class="created__by">By &mdash; Bluebird2000 | November 4 | 10  comments </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin__bottom">
+                    <div class="col-md-8">
+                        <div class="row bottom__color">
+                            <div class="col-md-4">
+                                <img src="assets/img/feature-mockup.png" alt="forum image" class="fr-img-responsive">
+                            </div>
+                            <div class="col-md-8">
+                                <h5 class="heading__section">We Ain’t Got No Podcast — Episode 14: Should Chelsea buy in January?</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos placeat iusto, saepe sunt maxime pariatur voluptates mollitia... <br /> 
+                                    <span class="created__by">By &mdash; Bluebird2000 | November 4 | 10  comments </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
