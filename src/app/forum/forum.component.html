@@ -1,4 +1,5 @@
 <app-forum-header></app-forum-header>
+<br /><br /><br />
 <div class="text-center" *ngIf="!(forums)">
     <ngb-progressbar type="info" [value]="fetchForumProgress" [striped]="true" [animated]="true">
         loading {{fetchForumProgress}}%
@@ -16,8 +17,12 @@
             <div class="main__section">
                 <div class="row background">
                     <div class="col-md-6">
-                        <img src="assets/asset/baby2.jpg" alt="">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda possimus doloremque, iste soluta quibusdam, illum quo accusamus dolorem reiciendis delectus rem ipsum commodi, iure aut. Nesciunt fuga molestias magnam repudiandae?</p>
+                        <div class="show__trending__post">
+                            <img src="assets/asset/baby2.jpg" alt="">     
+                            <div class="show__trending__post__content">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum nisi eius quod. Aliquam qui, culpa accusamus repellendus mollitia architecto quasi voluptas ad, expedita voluptate pariatur natus omnis, dicta quia perspiciatis?</p>
+                            </div>                       
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="row">
@@ -33,68 +38,41 @@
                     </div>
                 </div>
             </div>
-        <div class="mt__margin__top"></div>
-        
+        <div class="mt__margin__top"></div>        
             <div class="container__wrapper__left">
-                <div class="row margin__bottom" *ngFor="let forum of forums">
+                <div class="row">
                     <div class="col-md-8">
-                        <div class="row bottom__color">
-                            <div class="col-md-4">
-                                <img *ngIf="forum.upload_file" [src]="forum.upload_file" alt="forum image" class="fr-img-responsive">
-                                <img *ngIf="!forum.upload_file" src="http://res.cloudinary.com/bluebird/image/upload/v1573033673/zgp0rxvkg7l6duu7guls.png" alt="">
+                        <div class="linear__heading margin__bottom">
+                            <h3>The Latest</h3>
+                        </div>
+                        <div class="row margin__bottom" *ngFor="let forum of forums">
+                            <div class="col-md-12">
+                                <div class="row bottom__color">
+                                    <div class="col-md-4">
+                                        <img *ngIf="forum.upload_file" [src]="forum.upload_file" alt="forum image" class="fr-img-responsive">
+                                        <img *ngIf="!forum.upload_file" src="http://res.cloudinary.com/bluebird/image/upload/v1573033673/zgp0rxvkg7l6duu7guls.png" alt="">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5 class="heading__section">{{forum.topic}}</h5>
+                                        <p class="p__Section">{{(forum.description.length>200)?(forum.description | slice:0:200)+'...':(forum.description)}}<br /> 
+                                        <span class="created__by">By &mdash; {{forum.userId}} | {{forum.createdAt | date}} | {{forum.totalCommentCount}}  comments </span></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-8">
-                                <h5 class="heading__section">{{forum.topic}}</h5>
-                                <p>{{(forum.description.length>200)?(forum.description | slice:0:200)+'...':(forum.description)}}<br /> 
-                                  <span class="created__by">By &mdash; {{forum.userId}} | {{forum.createdAt | date}} | {{forum.totalCommentCount}}  comments </span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="linear__heading__secondary margin__bottom">
+                            <h3>Most Recent</h3>
+                        </div>
+                        <div class="show__most__recent">
+                            <div class="show__most__recent__content" *ngFor="let forum of forums">
+                                <h5 class="heading__section">{{(forum.topic.length>100)?(forum.topic | slice:0:100)+'...':(forum.topic)}}</h5>   
+                                <p class="p__Section"> <span class="created__by">By &mdash; {{forum.userId}} | {{forum.createdAt | date}} | {{forum.totalCommentCount}}  comments </span></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--  -->
-                <!-- <div class="row margin__bottom">
-                      <div class="col-md-8">
-                          <div class="row bottom__color">
-                              <div class="col-md-4">
-                                  <img src="assets/img/feature-mockup.png" alt="forum image" class="fr-img-responsive">
-                              </div>
-                              <div class="col-md-8">
-                                  <h5 class="heading__section">We Ain’t Got No Podcast — Episode 14: Should Chelsea buy in January?</h5>
-                                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos placeat iusto, saepe sunt maxime pariatur voluptates mollitia... <br /> 
-                                    <span class="created__by">By &mdash; Bluebird2000 | November 4 | 10  comments </span></p>
-                              </div>
-                          </div>
-                      </div>
-                  </div> -->
-                  <!--  -->
-                <!-- <div class="row margin__bottom">
-                    <div class="col-md-8">
-                        <div class="row bottom__color">
-                            <div class="col-md-4">
-                                <img src="assets/asset/home-banner.jpg" alt="forum image" class="fr-img-responsive">
-                            </div>
-                            <div class="col-md-8">
-                                <h5 class="heading__section">We Ain’t Got No Podcast — Episode 14: Should Chelsea buy in January?</h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos placeat iusto, saepe sunt maxime pariatur voluptates mollitia... <br /> 
-                                    <span class="created__by">By &mdash; Bluebird2000 | November 4 | 10  comments </span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="row margin__bottom">
-                    <div class="col-md-8">
-                        <div class="row bottom__color">
-                            <div class="col-md-4">
-                                <img src="assets/img/feature-mockup.png" alt="forum image" class="fr-img-responsive">
-                            </div>
-                            <div class="col-md-8">
-                                <h5 class="heading__section">We Ain’t Got No Podcast — Episode 14: Should Chelsea buy in January?</h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quos placeat iusto, saepe sunt maxime pariatur voluptates mollitia... <br /> 
-                                    <span class="created__by">By &mdash; Bluebird2000 | November 4 | 10  comments </span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </main>
