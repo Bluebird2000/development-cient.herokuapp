@@ -1,4 +1,10 @@
-<div class="admin-header">
+<div class="text-center" *ngIf="!(forums)">
+  <ngb-progressbar type="info" [value]="fetchForumProgress" [striped]="true" [animated]="true">
+    loading {{fetchForumProgress}}%
+  </ngb-progressbar>
+</div>
+
+<div *ngIf="forums" class="admin-header">
   <div class="header-image">
       <img src="assets/img/user1.jpg" alt="User Profile" class="img-responsive">
   </div>
@@ -12,24 +18,24 @@
   </div>
 </div>
 
-<div class="card">
+<div *ngIf="forums" class="card">
   <h3>Welcome, Admin Dada</h3>
   <p>You have 21 unread messages</p>
 </div>
 
-<div class="container">
+<div *ngIf="forums" class="container">
   <div class="row">
     <div class="col-md-4">
       <div class="info-details">
         <img src="assets/fonts/users 2.png" alt="">
-        <p class="user">3,456</p>
+        <p class="user">{{users}}</p>
         <p class="text">Users</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="info-details">
         <img src="assets/fonts/layers 2.png" alt="">
-        <p class="forum">246</p>
+        <p class="forum">{{forums}}</p>
         <p class="text">Forum</p>
       </div>
     </div>

@@ -10,6 +10,10 @@
   margin-top: 50px;
 }
 
+::ng-deep .progress-bar {
+  background-color: #51bbfe !important;
+}
+
 
 .img-responsive {
   border-radius: 50%;
