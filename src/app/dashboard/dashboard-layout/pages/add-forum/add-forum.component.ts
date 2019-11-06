@@ -28,9 +28,15 @@ export class AddForumComponent implements OnInit {
 
   get topic() { return this.forumForm.get('topic'); }
   get category() { return this.forumForm.get('category'); }
+  get upload_file() { return this.forumForm.get('upload_file'); }
   get description() { return this.forumForm.get('description'); }
   get getDisableState() { return this.forumForm.invalid || this.disableBtn; }
   private getDisableBtn(value: boolean) { this.disableBtn = value; }
+
+  onFileChanged(event) {
+    const file = event.target.files[0];
+    this.forumForm.get('upload_file').setValue(file);
+  }
 
   listCategories() {
     this.service.listCategories().subscribe((data: any) => {
@@ -44,21 +50,22 @@ export class AddForumComponent implements OnInit {
     this.forumForm = new FormGroup({
       topic: new FormControl('', [Validators.required]),
       category: new FormControl('', [Validators.required]),
+      upload_file: new FormControl(''),
       description: new FormControl('', [Validators.required])
     });
   }
 
   formSubmit() {
     if (this.forumForm.valid) {
+      const formData = new FormData();
       this.submitted = true;
       this.getDisableBtn(true);
-      const payload = {
-        topic: this.topic.value,
-        category: this.category.value,
-        description: this.description.value
-      };
+      formData.append('topic', this.topic.value);
+      formData.append('category', this.category.value);
+      formData.append('upload_file', this.upload_file.value);
+      formData.append('description', this.description.value);
       this.forumCreatingProgress();
-      this.service.addForum(payload).subscribe(
+      this.service.addForum(formData).subscribe(
         (data: any) => {
           this.addingForum = 10;
           this.success = true;
@@ -69,10 +76,10 @@ export class AddForumComponent implements OnInit {
         },
         error => {
           this.error = true;
+          console.log(error);
           this.addingForum = 10;
           clearInterval(this.setTimeProgress);
           setTimeout(() => this.error = false, 5000);
-          console.log(error.error.data[0].constraints);
           this.errorMessage = error.error.data[0].constraints.unique;
           this.getDisableBtn(false);
           this.loading = false;

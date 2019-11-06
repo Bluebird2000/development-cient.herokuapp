@@ -63,7 +63,6 @@ export class ForumComponent implements OnInit {
       this.mainSrv.listForums().subscribe((data: any) => {
         if (data) {
           console.log(data);
-          
           this.forums = data.data;
           clearInterval(this.setTimeProgress);
         }

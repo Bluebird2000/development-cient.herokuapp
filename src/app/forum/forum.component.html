@@ -40,11 +40,11 @@
                     <div class="col-md-8">
                         <div class="row bottom__color">
                             <div class="col-md-4">
-                                <img src="assets/asset/home-banner.jpg" alt="forum image" class="fr-img-responsive">
+                                <img [src]="forum.upload_file" alt="forum image" class="fr-img-responsive">
                             </div>
                             <div class="col-md-8">
                                 <h5 class="heading__section">{{forum.topic}}</h5>
-                                <p>{{(forum.topic.length>30)?(forum.topic | slice:0:30)+'...':(forum.topic)}}<br /> 
+                                <p>{{(forum.description.length>200)?(forum.description | slice:0:200)+'...':(forum.description)}}<br /> 
                                   <span class="created__by">By &mdash; {{forum.userId}} | {{forum.createdAt | date}} | {{forum.totalCommentCount}}  comments </span></p>
                             </div>
                         </div>
