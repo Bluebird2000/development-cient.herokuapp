@@ -67,6 +67,7 @@ export class AddForumComponent implements OnInit {
       this.forumCreatingProgress();
       this.service.addForum(formData).subscribe(
         (data: any) => {
+          console.log(data);
           this.addingForum = 10;
           this.success = true;
           clearInterval(this.setTimeProgress);

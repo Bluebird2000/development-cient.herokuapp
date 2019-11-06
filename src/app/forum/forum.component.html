@@ -40,7 +40,8 @@
                     <div class="col-md-8">
                         <div class="row bottom__color">
                             <div class="col-md-4">
-                                <img [src]="forum.upload_file" alt="forum image" class="fr-img-responsive">
+                                <img *ngIf="forum.upload_file" [src]="forum.upload_file" alt="forum image" class="fr-img-responsive">
+                                <img *ngIf="!forum.upload_file" src="http://res.cloudinary.com/bluebird/image/upload/v1573033673/zgp0rxvkg7l6duu7guls.png" alt="">
                             </div>
                             <div class="col-md-8">
                                 <h5 class="heading__section">{{forum.topic}}</h5>
